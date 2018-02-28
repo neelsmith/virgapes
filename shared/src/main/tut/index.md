@@ -11,3 +11,8 @@ The Virgapes alphabet defines a system for encoding neumes. It was designed by m
 
 
 See some initial docs on the system in this wiki from their wiki:  <https://github.com/HCMID/chant/wiki/The-Virgapes-System>
+
+
+## API docs
+
+Available [here](api/edu/holycross/shot/virgapes/index.html)
