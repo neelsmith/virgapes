@@ -6,8 +6,8 @@ permalink:        pretty
 
 # Setup
 title:            Virgapes library
-tagline:          'Work with chant data in the virgapes alphabet'
-description:      'A library for working with chant encoded in the virgapes alphabet'
+tagline:          'Work with neumes in the virgapes alphabet'
+description:      'A library for working with chant notated in neumes and encoded in the virgapes alphabet'
 
 
 baseurl: '/virgapes/'
