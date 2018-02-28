@@ -12,6 +12,16 @@ package edu.holycross.shot.virgapes
 case class Neume(pitches: Int, neume: Int, episema: Int, liquescence: Boolean) {
   require(validNeume)
 
+
+  def name: String = {
+    pitches match {
+      case 1 => Neume.syll1Name(neume)
+      case _  =>  s"Value for IDs not yet defined for neumes with more than one syllable."
+    }
+  }
+
+  /**  Validate values for member elements.
+  */
   def validNeume: Boolean = {
     require((0 to 4).toVector.contains(pitches))
     require(neume > 0)
@@ -48,4 +58,15 @@ object Neume {
     val liquescence = v(3) > 0
     Neume(v(0), v(1), v(2), liquescence)
   }
+
+
+  def syll1Name(id: Int): String = {
+
+    id match {
+      case 1 => "virga"
+      case 2 => "pes"
+      case i: Int => s"Unrecognized ID ${i} for one-syllable neume."
+    }
+  }
+
 }

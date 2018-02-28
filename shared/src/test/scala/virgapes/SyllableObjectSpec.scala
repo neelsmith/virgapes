@@ -15,6 +15,13 @@ class SyllableObjectSpec extends FlatSpec {
     val n2 = "1.1.0.0 1.2.0.0"
     val syll2 = Syllable(n2)
     assert(syll2.size == 2)
+
+    val n3 = """1.1.0.0
+    
+    1.3.0.1
+    1.2.0.0"""
+    val syll3 = Syllable(n3)
+    assert(syll3.size == 3)
   }
 
 }

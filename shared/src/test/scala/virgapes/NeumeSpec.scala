@@ -24,6 +24,16 @@ class NeumeSpec extends FlatSpec {
       case iae: IllegalArgumentException => assert(iae.toString == "java.lang.IllegalArgumentException: requirement failed: Episema (2) cannot be greater than total number of pitches (1)")
       case t: Throwable => fail("Should have failed with IllegalArgumentException but got " + t)
     }
+  }
 
+  it should "print names for identified neumes" in {
+    val neume = Neume(1,1,0,false)
+    val expected = "virga"
+    assert(neume.name == expected)
+
+    // In reality, should not be accepted...
+    val badId = 999999
+    val neume2 = Neume(1,badId,0,false)
+    assert(neume2.name == "Unrecognized ID 999999 for one-syllable neume.")
   }
 }
