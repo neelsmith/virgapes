@@ -13,6 +13,8 @@ case class Neume(pitches: Int, neume: Int, episema: Int, liquescence: Boolean) {
   require(validNeume)
 
 
+  /** Provide name for unique neume.
+  */
   def name: String = {
     pitches match {
       case 1 => Neume.syll1Name(neume)
