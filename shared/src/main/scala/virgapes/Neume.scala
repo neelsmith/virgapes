@@ -4,7 +4,7 @@ package edu.holycross.shot.virgapes
 /** A class representing a single neume.
 *
 * @param pitches Number of pitches in this neume.
-* @param Unique Identifier for this neume within set of
+* @param neume Identifier for this neume within set of
 * neumes having this number of pitches.
 * @param episema Syllable marked with episema, if any.
 * @param liquescence Whether or not this neume has liquescence.
