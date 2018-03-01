@@ -26,7 +26,7 @@ class SyllableObjectSpec extends FlatSpec {
   }
 
   it should "make a vector of Syllables from an ohco2 CitableNode" in {
-    val txt = "1.2.0.0 1.2.0.0 0.12.0.0-0.3.0.0"
+    val txt = "1.2.0.0 1.2.0.0 0.12.0.0-1.3.0.0"
     val u = CtsUrn("urn:cts:chant:antiphonary.eins121.mid:nativity.3")
     val cn = CitableNode(u,txt)
     val sylls = Syllable(cn)
@@ -39,7 +39,7 @@ class SyllableObjectSpec extends FlatSpec {
     assert(oneSyllable.size == expectedNeumes)
 
     val punct = sylls(0).neumes(0)
-    assert(punct.neumeType.get == Punctum)
+      assert(punct.neumeType.get == Punctum)
   }
 
 
