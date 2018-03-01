@@ -27,11 +27,33 @@ case class Neume(pitches: Int, neume: Int, episema: Int, liquescence: Boolean) {
   /**  Validate values for member elements.
   */
   def validNeume: Boolean = {
-    require((0 to 4).toVector.contains(pitches))
-    require(neume > 0)
-    require((0 to 2).toVector.contains(episema))
+    require((0 to 4).toVector.contains(pitches),s"Number of pitches must in range 0..4 (${pitches})")
+    require((0 to 2).toVector.contains(episema), s"Value episema must be in range 0..2 (${episema})")
     require(episema <= pitches, s"Episema (${episema}) cannot be greater than total number of pitches (${pitches})")
-    true
+
+    pitches match {
+      case 0 => {
+        require( (1 to 14).toVector.contains(neume), s"Invalid ID ${neume} for significative letter.")
+        true
+      }
+      case 1 => {
+        require( (1 to 4).toVector.contains(neume), s"Invalid ID ${neume} for neume with one syllable.")
+        true
+      }
+      case 2 => {
+        require( (1 to 5).toVector.contains(neume), s"Invalid ID ${neume} for neume with two syllables.")
+        true
+      }
+      case 3 => {
+        require( (1 to 7).toVector.contains(neume), s"Invalid ID ${neume} for neume with three syllables.")
+        true
+      }
+      case 4 => {
+        require( (1 to 7).toVector.contains(neume), s"Invalid ID ${neume} for neume with four syllables.")
+        true
+      }
+    }
+
   }
 }
 
@@ -100,12 +122,23 @@ object Neume {
       }
 
       case 3 => neumeId match {
+        case 1 => Some(Porrectus)
+        case 2 => Some(Torculus)
+        case 3 => Some(Climacus)
+        case 4 => Some(Scandicus)
+        case 5 => Some(Tristropha)
+        case 6 => Some(Trisvirga)
+        case 7 => Some(Trigon)
         case i: Int => {
           println(s"Unrecognized ID ${i} for three-syllable neume.")
           None
         }
       }
       case 4  => neumeId match {
+        case 1 => Some(PorrectusFlexus)
+        case 2 => Some(PesSubBipunctis)
+        case 3 => Some(ScandicusFlexus)
+        case 4 => Some(TorculusResupinus)
         case i: Int => {
           println(s"Unrecognized ID ${i} for four-syllable neume.")
           None
@@ -113,6 +146,20 @@ object Neume {
       }
 
       case 0 => neumeId match {
+        case 1 => Some(SignificativeA)
+        case 2 => Some(SignificativeB)
+        case 3 => Some(SignificativeC)
+        case 4 => Some(SignificativeE)
+        case 5 => Some(SignificativeF)
+        case 6 => Some(SignificativeI)
+        case 7 => Some(SignificativeK)
+        case 8 => Some(SignificativeL)
+        case 9 => Some(SignificativeM)
+        case 10 => Some(SignificativeP)
+        case 11 => Some(SignificativeS)
+        case 12 => Some(SignificativeT)
+        case 13 => Some(SignificativeV)
+        case 14 => Some(SignificativeX)
         case i: Int => {
           println(s"Unrecognized ID ${i} for significative letter.")
           None

@@ -114,10 +114,7 @@ final case object PesQuassus extends NeumeType  {
 }
 
 
-
-
 // Three-syllable neume types:
-
 final case object Porrectus extends NeumeType  {
   def pitches: Int = { 3 }
   def name: String = "porrectus"

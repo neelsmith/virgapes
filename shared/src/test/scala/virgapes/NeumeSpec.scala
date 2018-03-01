@@ -37,11 +37,18 @@ class NeumeSpec extends FlatSpec {
     val neume = Neume(1,1,0,false)
     val expected = "virga"
     assert(neume.name == expected)
+  }
 
+  it should "reject invalid combinations of neueme ID and number of pitches"  in {
     // In reality, should never be accepted...
-    val badId = 999999
-    val neume2 = Neume(1,badId,0,false)
-    assert(neume2.name == "Could not find type for ID 999999 with 1 pitch(es).")
+    try {
+      val badId = 999999
+      val neume2 = Neume(1,badId,0,false)
+      fail("Should not have created neume")
+    } catch {
+      case ia: IllegalArgumentException => assert(ia.toString == "java.lang.IllegalArgumentException: requirement failed: Invalid ID 999999 for neume with one syllable.")
+      case t: Throwable => fail("Should have gotten IllegalArgumentException but got " + t)
+    }
   }
 
   it should "ensure that the number of pitches for a neume type is the same as the number of pitches for an instance of a neueme" in {

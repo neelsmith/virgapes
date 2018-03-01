@@ -23,4 +23,21 @@ class NeumeObjectSpec extends FlatSpec {
     assert(neume.episema == 0)
     assert(neume.liquescence == false)
   }
+
+  it should "find NeumeType for values" in {
+    assert(Neume.neumeType(0,1).get == SignificativeA)
+    assert(Neume.neumeType(0,2).get == SignificativeB)
+    assert(Neume.neumeType(0,3).get == SignificativeC)
+    assert(Neume.neumeType(0,4).get == SignificativeE)
+    assert(Neume.neumeType(0,5).get == SignificativeF)
+    assert(Neume.neumeType(0,6).get == SignificativeI)
+    assert(Neume.neumeType(0,7).get == SignificativeK)
+    assert(Neume.neumeType(0,8).get == SignificativeL)
+    assert(Neume.neumeType(0,9).get == SignificativeM)
+    assert(Neume.neumeType(0,10).get == SignificativeP)
+    assert(Neume.neumeType(0,11).get == SignificativeS)
+    assert(Neume.neumeType(0,12).get == SignificativeT)
+    assert(Neume.neumeType(0,13).get == SignificativeV)
+    assert(Neume.neumeType(0,14).get == SignificativeX)            
+  }
 }

@@ -80,7 +80,6 @@ class NeumeTypeSpec extends FlatSpec {
     assert(Trigon.pitches == 3)
   }
 
-
   it should "recognize a porrectus flexus" in {
     assert(PorrectusFlexus.name == "porrectus flexus")
     assert(PorrectusFlexus.pitches == 4)
