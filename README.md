@@ -24,3 +24,19 @@ Not yet published.
 ## Documentation
 
 See https://neelsmith.github.io/virgapes/.
+
+## Using, building, testing
+
+`virgapes` can be built for both the JVM and ScalaJS using any version of Scala 2.11 or higher. Binaries for both the JVM and ScalaJS are available from jcenter built with Scala 2.11.8 and 2.12.3. To use the binaries in an sbt project, include Resolver.jcenterRepoin your list of resolvers
+
+    resolvers += Resolver.jcenter
+
+and add this to your library dependencies:
+
+    "edu.holycross.shot.cite" %% "ohco2" % VERSION
+
+For maven, ivy or gradle equivalents, refer to <https://bintray.com/neelsmith/maven/virgapes>.
+
+To build from source and test for a given version, use normal sbt commands (`compile`, `test` ...).
+
+You can also test or run tasks against all versions, using + before the task name. E.g., `sbt "+ test"` runs the `test` task against all versions.
