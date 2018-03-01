@@ -33,7 +33,6 @@ class NeumeSpec extends FlatSpec {
 
   }
 
-
   it should "find the name for an identified neume" in {
     val neume = Neume(1,1,0,false)
     val expected = "virga"

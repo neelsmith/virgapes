@@ -83,8 +83,14 @@ object Neume {
           None
         }
       }
+      case 2 => neumeId match {
+        case 1 => Some(Clivis)
+        case i: Int => {
+          println(s"Unrecognized ID ${i} for two-syllable neume.")
+          None
+        }
+      }
       case i: Int => None
-
     }
   }
   /*
@@ -109,13 +115,8 @@ object Neume {
         case 15 => "x"
         case i: Int => s"Unrecognized ID ${i} for significative letter."
       }
-      case 1 => id match {
-        case 1 => "virga"
-        case 2 => "pes"
-        case 3 => "apostrophe"
-        case 4 => "quilisma"
-        case i: Int => s"Unrecognized ID ${i} for one-syllable neume."
-      }
+
+
       case 2 => id match {
         case 1 => "clivis"
         case 2 => "pes"
