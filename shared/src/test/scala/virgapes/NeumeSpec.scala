@@ -34,6 +34,6 @@ class NeumeSpec extends FlatSpec {
     // In reality, should not be accepted...
     val badId = 999999
     val neume2 = Neume(1,badId,0,false)
-    assert(neume2.name == "Unrecognized ID 999999 for one-syllable neume.")
+    assert(neume2.name == "Could not find type for ID 999999 with 1 pitch(es).")
   }
 }

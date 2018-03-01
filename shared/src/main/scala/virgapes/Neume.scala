@@ -12,12 +12,16 @@ package edu.holycross.shot.virgapes
 case class Neume(pitches: Int, neume: Int, episema: Int, liquescence: Boolean) {
   require(validNeume)
 
-
+  def neumeType: Option[NeumeType] = {
+    Neume.neumeType(pitches, neume)
+  }
   /** Provide name for unique neume.
   */
   def name: String = {
-    //Neume.neumeName(pitches, neume)
-    "??"
+    neumeType match {
+      case None => s"Could not find type for ID ${neume} with ${pitches} pitch(es)."
+      case nt: Some[NeumeType] => nt.get.name
+    }
   }
 
   /**  Validate values for member elements.
@@ -66,6 +70,23 @@ object Neume {
   * @param id Unique identifier for neueme of given pitch size.
   */
 
+
+  def neumeType(pitchCount: Int, neumeId: Int): Option[NeumeType] = {
+    pitchCount match {
+      case 1 => neumeId match {
+        case 1 => Some(Virga)
+        case 2 => Some(Pes)
+        //case 3 => "apostrophe"
+        //case 4 => "quilisma"
+        case i: Int => {
+          println(s"Unrecognized ID ${i} for one-syllable neume.")
+          None
+        }
+      }
+      case i: Int => None
+
+    }
+  }
   /*
   def neumeName(pitches: Int, id: Int): String = {
 
