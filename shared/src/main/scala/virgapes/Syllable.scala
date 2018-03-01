@@ -40,6 +40,10 @@ object Syllable {
     syllables.toVector
   }
 
+  /** Build a Vector of [[Syllable]]s from an OHCO2 CitableNode.
+  *
+  * @param n CitableNode with text content consiting of neumes encoded in virgapes notation.
+  */
   def apply(n: CitableNode): Vector[Syllable] = {
     Syllable(n.text)
   }

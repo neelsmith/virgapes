@@ -30,7 +30,16 @@ class SyllableObjectSpec extends FlatSpec {
     val u = CtsUrn("urn:cts:chant:antiphonary.eins121.mid:nativity.3")
     val cn = CitableNode(u,txt)
     val sylls = Syllable(cn)
-    println("Sylls from node = " +sylls)
+
+    val expectedSyllables = 3
+    assert(sylls.size == expectedSyllables)
+
+    val oneSyllable = sylls(2)
+    val expectedNeumes = 2
+    assert(oneSyllable.size == expectedNeumes)
+
+    val punct = sylls(0).neumes(0)
+    assert(punct.neumeType.get == Punctum)
   }
 
 
