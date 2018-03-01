@@ -97,25 +97,7 @@ object Neume {
   def neumeName(pitches: Int, id: Int): String = {
 
     pitches match {
-      case 0 => id match {
-        case 1 => "a"
-        case 2 => "b"
-        case 3 => "c"
-        case 4 => "d"
-        case 5 => "e"
-        case 6 => "f"
-        case 7 => "i"
-        case 8 => "k"
-        case 9 => "l"
-        case 10 => "m"
-        case 11 => "p"
-        case 12 => "s"
-        case 13 => "t"
-        case 14 => "v"
-        case 15 => "x"
-        case i: Int => s"Unrecognized ID ${i} for significative letter."
-      }
-
+      
 
       case 2 => id match {
         case 1 => "clivis"

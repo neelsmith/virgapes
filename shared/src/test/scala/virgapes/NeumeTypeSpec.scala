@@ -12,9 +12,9 @@ class NeumeTypeSpec extends FlatSpec {
     assert(Virga.name == "virga")
     assert(Virga.pitches == 1)
   }
-  it should "recognize a pes" in {
-    assert(Pes.name == "pes")
-    assert(Pes.pitches == 1)
+  it should "recognize a punctum" in {
+    assert(Punctum.name == "punctum")
+    assert(Punctum.pitches == 1)
   }
   it should "recognize an apostrophe" in {
     assert(Apostrophe.name == "apostrophe")
@@ -28,6 +28,26 @@ class NeumeTypeSpec extends FlatSpec {
   it should "recognize a clivis" in {
     assert(Clivis.name == "clivis")
     assert(Clivis.pitches == 2)
+  }
+
+  it should "recognize a pes" in {
+    assert(Pes.name == "pes")
+    assert(Pes.pitches == 2)
+  }
+
+  it should "recognize a distropha" in {
+    assert(Distropha.name == "distropha")
+    assert(Distropha.pitches == 2)
+  }
+
+  it should "recognize a bivirga " in {
+    assert(Bivirga.name == "bivirga")
+    assert(Bivirga.pitches == 2)
+  }
+
+  it should "recognize a pes quassus" in {
+    assert(PesQuassus.name == "pes quassus")
+    assert(PesQuassus.pitches == 2)
   }
 
 

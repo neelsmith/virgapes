@@ -74,9 +74,9 @@ final case object Virga extends NeumeType {
   def pitches: Int = { 1 }
   def name: String = "virga"
 }
-final case object Pes extends NeumeType  {
+final case object Punctum extends NeumeType  {
   def pitches: Int = { 1 }
-  def name: String = "pes"
+  def name: String = "punctum"
 }
 final case object Apostrophe extends NeumeType  {
   def pitches: Int = { 1 }
@@ -91,4 +91,24 @@ final case object Quilisma extends NeumeType  {
 final case object Clivis extends NeumeType  {
   def pitches: Int = { 2 }
   def name: String = "clivis"
+}
+
+final case object Pes extends NeumeType  {
+  def pitches: Int = { 2 }
+  def name: String = "pes"
+}
+
+final case object Distropha extends NeumeType  {
+  def pitches: Int = { 2 }
+  def name: String = "distropha"
+}
+
+final case object Bivirga extends NeumeType  {
+  def pitches: Int = { 2 }
+  def name: String = "bivirga"
+}
+
+final case object PesQuassus extends NeumeType  {
+  def pitches: Int = { 2 }
+  def name: String = "pes quassus"
 }
