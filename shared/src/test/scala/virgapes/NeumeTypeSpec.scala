@@ -81,6 +81,22 @@ class NeumeTypeSpec extends FlatSpec {
   }
 
 
+  it should "recognize a porrectus flexus" in {
+    assert(PorrectusFlexus.name == "porrectus flexus")
+    assert(PorrectusFlexus.pitches == 4)
+  }
+  it should "recognize a subbipunctis" in {
+    assert(PesSubBipunctis.name == "pes subbipunctis")
+    assert(PesSubBipunctis.pitches == 4)
+  }
+  it should "recognize a scandicus flexus" in {
+    assert(ScandicusFlexus.name == "scandicus flexus")
+    assert(ScandicusFlexus.pitches == 4)
+  }
+  it should "recognize a torculus resupinus" in {
+    assert(TorculusResupinus.name == "torculus resupinus")
+    assert(TorculusResupinus.pitches == 4)
+  }
 
   it should "recognize a significative letter 'a'" in {
     assert(SignificativeA.name == "a")

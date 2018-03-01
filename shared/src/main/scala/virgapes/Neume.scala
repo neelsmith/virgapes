@@ -71,6 +71,10 @@ object Neume {
   */
 
 
+  /** Determine type of neume for given pitch count and neume ID.
+  * @param pitchCount Number of pitches in this neume.
+  * @param neumeId Unique ID within given number of pitches.
+  */
   def neumeType(pitchCount: Int, neumeId: Int): Option[NeumeType] = {
     pitchCount match {
       case 1 => neumeId match {
@@ -93,26 +97,4 @@ object Neume {
       case i: Int => None
     }
   }
-  /*
-
-      case 3 => id match {
-        case 1 => "porrectus"
-        case 2 => "torculus"
-        case 3 => "climacus"
-        case 4 => "scandicus"
-        case 5 => "tristropha"
-        case 6 => "trivirga"
-        case 7 => "trigon"
-        case i: Int => s"Unrecognized ID ${i} for three-syllable neume."
-      }
-      case 4 => id match {
-        case 1 => "porrectus flexus"
-        case 2 => "pes subbipunctis"
-        case 3 => "scandicus flexus"
-        case 4 => "torculus resupinus"
-        case i: Int => s"Unrecognized ID ${i} for four-syllable neume."
-      }
-
-  */
-
 }

@@ -154,3 +154,19 @@ final case object Trigon extends NeumeType  {
 }
 
 // Four-syllable neume types:
+final case object PorrectusFlexus extends NeumeType  {
+  def pitches: Int = { 4 }
+  def name: String = "porrectus flexus"
+}
+final case object PesSubBipunctis extends NeumeType  {
+  def pitches: Int = { 4 }
+  def name: String = "pes subbipunctis"
+}
+final case object ScandicusFlexus extends NeumeType  {
+  def pitches: Int = { 4 }
+  def name: String = "scandicus flexus"
+}
+final case object TorculusResupinus extends NeumeType  {
+  def pitches: Int = { 4 }
+  def name: String = "torculus resupinus"
+}
