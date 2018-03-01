@@ -40,7 +40,6 @@ class NeumeSpec extends FlatSpec {
   }
 
   it should "reject invalid combinations of neueme ID and number of pitches"  in {
-    // In reality, should never be accepted...
     try {
       val badId = 999999
       val neume2 = Neume(1,badId,0,false)

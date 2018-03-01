@@ -1,5 +1,6 @@
 package edu.holycross.shot.virgapes
-
+import edu.holycross.shot.cite._
+import edu.holycross.shot.ohco2._
 
 /** A class representing an ordered sequence of [[Neume]]s
 * on a single syllable of text.
@@ -39,4 +40,7 @@ object Syllable {
     syllables.toVector
   }
 
+  def apply(n: CitableNode): Vector[Syllable] = {
+    Syllable(n.text)
+  }
 }

@@ -15,6 +15,7 @@ case class Neume(pitches: Int, neume: Int, episema: Int, liquescence: Boolean) {
   def neumeType: Option[NeumeType] = {
     Neume.neumeType(pitches, neume)
   }
+
   /** Provide name for unique neume.
   */
   def name: String = {
