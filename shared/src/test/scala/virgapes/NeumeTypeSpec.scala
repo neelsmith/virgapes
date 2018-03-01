@@ -51,6 +51,37 @@ class NeumeTypeSpec extends FlatSpec {
   }
 
 
+  it should "recognize a porrectus" in {
+    assert(Porrectus.name == "porrectus")
+    assert(Porrectus.pitches == 3)
+  }
+  it should "recognize a torculus" in {
+    assert(Torculus.name == "torculus")
+    assert(Torculus.pitches == 3)
+  }
+  it should "recognize a climacus" in {
+    assert(Climacus.name == "climacus")
+    assert(Climacus.pitches == 3)
+  }
+  it should "recognize a scandicus" in {
+    assert(Scandicus.name == "scandicus")
+    assert(Scandicus.pitches == 3)
+  }
+  it should "recognize a tristropha" in {
+    assert(Tristropha.name == "tristropha")
+    assert(Tristropha.pitches == 3)
+  }
+  it should "recognize a trisvirga" in {
+    assert(Trisvirga.name == "trisvirga")
+    assert(Trisvirga.pitches == 3)
+  }
+  it should "recognize a trigon" in {
+    assert(Trigon.name == "trigon")
+    assert(Trigon.pitches == 3)
+  }
+
+
+
   it should "recognize a significative letter 'a'" in {
     assert(SignificativeA.name == "a")
     assert(SignificativeA.pitches == 0)

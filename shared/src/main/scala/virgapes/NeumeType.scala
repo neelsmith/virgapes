@@ -112,3 +112,45 @@ final case object PesQuassus extends NeumeType  {
   def pitches: Int = { 2 }
   def name: String = "pes quassus"
 }
+
+
+
+
+// Three-syllable neume types:
+
+final case object Porrectus extends NeumeType  {
+  def pitches: Int = { 3 }
+  def name: String = "porrectus"
+}
+
+final case object Torculus extends NeumeType  {
+  def pitches: Int = { 3 }
+  def name: String = "torculus"
+}
+
+final case object Climacus extends NeumeType  {
+  def pitches: Int = { 3 }
+  def name: String = "climacus"
+}
+
+final case object Scandicus extends NeumeType  {
+  def pitches: Int = { 3 }
+  def name: String = "scandicus"
+}
+
+final case object Tristropha extends NeumeType  {
+  def pitches: Int = { 3 }
+  def name: String = "tristropha"
+}
+
+final case object Trisvirga extends NeumeType  {
+  def pitches: Int = { 3 }
+  def name: String = "trisvirga"
+}
+
+final case object Trigon extends NeumeType  {
+  def pitches: Int = { 3 }
+  def name: String = "trigon"
+}
+
+// Four-syllable neume types:

@@ -94,19 +94,7 @@ object Neume {
     }
   }
   /*
-  def neumeName(pitches: Int, id: Int): String = {
 
-    pitches match {
-      
-
-      case 2 => id match {
-        case 1 => "clivis"
-        case 2 => "pes"
-        case 3 => "distropha"
-        case 4 => "bivirga"
-        case 5 => "pes quassus"
-        case i: Int => s"Unrecognized ID ${i} for two-syllable neume."
-      }
       case 3 => id match {
         case 1 => "porrectus"
         case 2 => "torculus"
@@ -124,11 +112,7 @@ object Neume {
         case 4 => "torculus resupinus"
         case i: Int => s"Unrecognized ID ${i} for four-syllable neume."
       }
-      case _ => {
-        s"Neumes with ${pitches} syllables are not supported"
-      }
-    }
-  }
+
   */
 
 }
