@@ -16,10 +16,8 @@ case class Neume(pitches: Int, neume: Int, episema: Int, liquescence: Boolean) {
   /** Provide name for unique neume.
   */
   def name: String = {
-    pitches match {
-      case 1 => Neume.syll1Name(neume)
-      case _  =>  s"Value for IDs not yet defined for neumes with more than one syllable."
-    }
+    //Neume.neumeName(pitches, neume)
+    "??"
   }
 
   /**  Validate values for member elements.
@@ -62,13 +60,71 @@ object Neume {
   }
 
 
-  def syll1Name(id: Int): String = {
+  /** Look up name of neume for given pitch and id combination.
+  *
+  * @param pitches Number of pitches.
+  * @param id Unique identifier for neueme of given pitch size.
+  */
 
-    id match {
-      case 1 => "virga"
-      case 2 => "pes"
-      case i: Int => s"Unrecognized ID ${i} for one-syllable neume."
+  /*
+  def neumeName(pitches: Int, id: Int): String = {
+
+    pitches match {
+      case 0 => id match {
+        case 1 => "a"
+        case 2 => "b"
+        case 3 => "c"
+        case 4 => "d"
+        case 5 => "e"
+        case 6 => "f"
+        case 7 => "i"
+        case 8 => "k"
+        case 9 => "l"
+        case 10 => "m"
+        case 11 => "p"
+        case 12 => "s"
+        case 13 => "t"
+        case 14 => "v"
+        case 15 => "x"
+        case i: Int => s"Unrecognized ID ${i} for significative letter."
+      }
+      case 1 => id match {
+        case 1 => "virga"
+        case 2 => "pes"
+        case 3 => "apostrophe"
+        case 4 => "quilisma"
+        case i: Int => s"Unrecognized ID ${i} for one-syllable neume."
+      }
+      case 2 => id match {
+        case 1 => "clivis"
+        case 2 => "pes"
+        case 3 => "distropha"
+        case 4 => "bivirga"
+        case 5 => "pes quassus"
+        case i: Int => s"Unrecognized ID ${i} for two-syllable neume."
+      }
+      case 3 => id match {
+        case 1 => "porrectus"
+        case 2 => "torculus"
+        case 3 => "climacus"
+        case 4 => "scandicus"
+        case 5 => "tristropha"
+        case 6 => "trivirga"
+        case 7 => "trigon"
+        case i: Int => s"Unrecognized ID ${i} for three-syllable neume."
+      }
+      case 4 => id match {
+        case 1 => "porrectus flexus"
+        case 2 => "pes subbipunctis"
+        case 3 => "scandicus flexus"
+        case 4 => "torculus resupinus"
+        case i: Int => s"Unrecognized ID ${i} for four-syllable neume."
+      }
+      case _ => {
+        s"Neumes with ${pitches} syllables are not supported"
+      }
     }
   }
+  */
 
 }
