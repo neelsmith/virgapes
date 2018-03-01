@@ -79,7 +79,7 @@ object Neume {
     pitchCount match {
       case 1 => neumeId match {
         case 1 => Some(Virga)
-        case 2 => Some(Pes)
+        case 2 => Some(Punctum)
         case 3 => Some(Apostrophe)
         case 4 => Some(Quilisma)
         case i: Int => {
@@ -89,12 +89,35 @@ object Neume {
       }
       case 2 => neumeId match {
         case 1 => Some(Clivis)
+        case 2 => Some(Pes)
+        case 3 => Some(Distropha)
+        case 4 => Some(Bivirga)
+        case 5 => Some(PesQuassus)
         case i: Int => {
           println(s"Unrecognized ID ${i} for two-syllable neume.")
           None
         }
       }
-      case i: Int => None
+
+      case 3 => neumeId match {
+        case i: Int => {
+          println(s"Unrecognized ID ${i} for three-syllable neume.")
+          None
+        }
+      }
+      case 4  => neumeId match {
+        case i: Int => {
+          println(s"Unrecognized ID ${i} for four-syllable neume.")
+          None
+        }
+      }
+
+      case 0 => neumeId match {
+        case i: Int => {
+          println(s"Unrecognized ID ${i} for significative letter.")
+          None
+        }
+      }
     }
   }
 }
