@@ -35,7 +35,7 @@ val nType = neume.neumeType
 assert(nType.get == Punctum)
 ```
 
-See the API docs for  more information.
+See the [API docs](https://neelsmith.github.io/virgapes/api/edu/holycross/shot/virgapes/index.html) for  more information.
 
 ## `Syllable`s
 
