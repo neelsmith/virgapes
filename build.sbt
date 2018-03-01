@@ -1,6 +1,5 @@
 name := "Virgapes utilities"
 
-// XML libraries moved in 2.11, so can't support 2.10.
 crossScalaVersions := Seq("2.11.8", "2.12.3")
 scalaVersion := "2.12.3"
 
@@ -16,7 +15,7 @@ lazy val crossed = crossProject.in(file(".")).
     settings(
       name := "virgapes",
       organization := "edu.holycross.shot",
-      version := "0.0.1",
+      version := "1.0.0",
       licenses += ("GPL-3.0",url("https://opensource.org/licenses/gpl-3.0.html")),
       resolvers += Resolver.jcenterRepo,
       resolvers += Resolver.bintrayRepo("neelsmith", "maven"),
