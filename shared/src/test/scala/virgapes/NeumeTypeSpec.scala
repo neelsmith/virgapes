@@ -16,4 +16,12 @@ class NeumeTypeSpec extends FlatSpec {
     assert(Pes.name == "pes")
     assert((Pes.pitches == 1))
   }
+  it should "recognize an apostrophe" in {
+    assert(Apostrophe.name == "apostrophe")
+    assert(Apostrophe.pitches == 1)
+  }
+  it should "recognize a quilisma" in {
+    assert(Quilisma.name == "quilisma")
+    assert((Quilisma.pitches == 1))
+  }
 }

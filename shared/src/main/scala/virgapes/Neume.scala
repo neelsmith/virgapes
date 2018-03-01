@@ -76,8 +76,8 @@ object Neume {
       case 1 => neumeId match {
         case 1 => Some(Virga)
         case 2 => Some(Pes)
-        //case 3 => "apostrophe"
-        //case 4 => "quilisma"
+        case 3 => Some(Apostrophe)
+        case 4 => Some(Quilisma)
         case i: Int => {
           println(s"Unrecognized ID ${i} for one-syllable neume.")
           None
