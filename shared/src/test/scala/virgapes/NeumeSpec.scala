@@ -26,14 +26,27 @@ class NeumeSpec extends FlatSpec {
     }
   }
 
-  it should "print names for identified neumes" in {
+  it should "find the type for neume" in {
+    val neume = Neume(1,1,0,false)
+    val expectedType = Virga
+    assert (neume.neumeType.get == expectedType)
+
+  }
+
+
+  it should "find the name for an identified neume" in {
     val neume = Neume(1,1,0,false)
     val expected = "virga"
     assert(neume.name == expected)
 
-    // In reality, should not be accepted...
+    // In reality, should never be accepted...
     val badId = 999999
     val neume2 = Neume(1,badId,0,false)
     assert(neume2.name == "Could not find type for ID 999999 with 1 pitch(es).")
+  }
+
+  it should "ensure that the number of pitches for a neume type is the same as the number of pitches for an instance of a neueme" in {
+    val neume = Neume(1,1,0,false)
+    assert(neume.pitches == neume.neumeType.get.pitches  )
   }
 }

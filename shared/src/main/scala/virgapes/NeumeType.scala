@@ -18,3 +18,11 @@ final case object Pes extends NeumeType  {
   def pitches: Int = { 1 }
   def name: String = "pes"
 }
+final case object Apostrophe extends NeumeType  {
+  def pitches: Int = { 1 }
+  def name: String = "apostrophe"
+}
+final case object Quilisma extends NeumeType  {
+  def pitches: Int = { 1 }
+  def name: String = "quilisma"
+}
