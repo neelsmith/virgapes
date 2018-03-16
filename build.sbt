@@ -1,7 +1,8 @@
 name := "Virgapes utilities"
 
-crossScalaVersions := Seq("2.11.8", "2.12.3")
-scalaVersion := "2.12.3"
+crossScalaVersions in ThisBuild := Seq("2.10.6","2.11.8", "2.12.4")
+scalaVersion := (crossScalaVersions in ThisBuild).value.last
+
 
 lazy val root = project.in(file(".")).
     aggregate(crossedJVM, crossedJS).
@@ -22,8 +23,8 @@ lazy val crossed = crossProject.in(file(".")).
       libraryDependencies ++= Seq(
         "org.scala-js" %% "scalajs-stubs" % scalaJSVersion % "provided",
         "org.scalatest" %%% "scalatest" % "3.0.1" % "test",
-        "edu.holycross.shot.cite" %% "xcite" % "3.2.1",
-        "edu.holycross.shot" %% "ohco2" % "10.4.0"
+        "edu.holycross.shot.cite" %% "xcite" % "3.2.2",
+        "edu.holycross.shot" %% "ohco2" % "10.5.4"
       )
     ).
     jvmSettings(
@@ -37,4 +38,4 @@ lazy val crossed = crossProject.in(file(".")).
 
 
 lazy val crossedJVM = crossed.jvm.enablePlugins(TutPlugin)
-lazy val crossedJS = crossed.js.enablePlugins(ScalaJSPlugin)
+lazy val crossedJS = crossed.js
