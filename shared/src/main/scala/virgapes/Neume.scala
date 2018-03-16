@@ -1,6 +1,9 @@
 package edu.holycross.shot.virgapes
 
 
+import scala.scalajs.js
+import scala.scalajs.js.annotation._
+
 /** A class representing a single neume.
 *
 * @param pitches Number of pitches in this neume.
@@ -9,7 +12,7 @@ package edu.holycross.shot.virgapes
 * @param episema Syllable marked with episema, if any.
 * @param liquescence Whether or not this neume has liquescence.
 */
-case class Neume(pitches: Int, neume: Int, episema: Int, liquescence: Boolean) {
+@JSExportAll case class Neume(pitches: Int, neume: Int, episema: Int, liquescence: Boolean) {
   require(validNeume)
 
   def neumeType: Option[NeumeType] = {

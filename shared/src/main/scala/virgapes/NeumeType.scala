@@ -1,9 +1,12 @@
 package edu.holycross.shot.virgapes
 
+import scala.scalajs.js
+import scala.scalajs.js.annotation._
+
 /** Taxonomy of neumes.  Specific neumes are used
 * for a given number of syllables, and have a name.
 */
-sealed trait NeumeType {
+@JSExportAll sealed trait NeumeType {
   /** Number of pitches appropriate for this neueme.*/
   def pitches: Int
   /** Name of this neume. */
