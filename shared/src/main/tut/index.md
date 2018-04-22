@@ -8,7 +8,7 @@ title: Virgapes library
 
 
 -   [Quick start](quick)
--   Current [API docs](api/edu/holycross/shot/virgapes/index.html)
+-   [API docs](api/edu/holycross/shot/virgapes/index.html): version **2.0.0**
 -   [Github repository](https://github.com/neelsmith/virgapes)
 
 

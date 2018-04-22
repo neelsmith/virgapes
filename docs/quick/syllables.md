@@ -4,7 +4,7 @@ title:  Syllables
 ---
 
 
-A `Syllable` has a vector of `Neume`s.  You can create a Vector of `Syllable`s from a `String`.  Syllables are separated by white space;  within a single syllable, neumes are separated by hyphens.
+A `Syllable` has a vector of `Neume`s.  You can create a Vector of `Syllable`s from a `String` using the `Syllabifier` object.  Syllables are separated by white space;  within a single syllable, neumes are separated by hyphens.
 
 Example:  the string `1.2.0.0 1.2.0.0 0.12.0.0-1.3.0.0` represents three syllables.  The first and second syllable each have one neume;  the final syllable has two neumes.
 
@@ -12,7 +12,7 @@ Example:  the string `1.2.0.0 1.2.0.0 0.12.0.0-1.3.0.0` represents three syllabl
 import edu.holycross.shot.virgapes._
 
 
-val sylls =  Syllable("1.2.0.0 1.2.0.0 0.12.0.0-1.3.0.0")
+val sylls =  Syllabifier("1.2.0.0 1.2.0.0 0.12.0.0-1.3.0.0")
 assert(sylls.size == 3)
 
 val s1 = sylls(0)

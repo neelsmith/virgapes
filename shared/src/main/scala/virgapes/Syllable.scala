@@ -24,7 +24,7 @@ import scala.scalajs.js.annotation._
 * White space separates syllables.  Hyphens separate neumes for
 * a single syllable.
 */
-object Syllable {
+object Syllabifier {
 
   /** Build a Vector of [[Syllable]]s from a string value.
   *
@@ -48,6 +48,6 @@ object Syllable {
   * @param n CitableNode with text content consiting of neumes encoded in virgapes notation.
   */
   def apply(n: CitableNode): Vector[Syllable] = {
-    Syllable(n.text)
+    Syllabifier(n.text)
   }
 }

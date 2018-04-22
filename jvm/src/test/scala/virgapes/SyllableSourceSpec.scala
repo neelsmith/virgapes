@@ -18,7 +18,7 @@ class SyllableSourceSpec extends FlatSpec {
     val repo = TextRepositorySource.fromCexFile(cex,"#")
 
     val n = repo.corpus.nodes(0)
-    val syll = Syllable(n)
+    val syll = Syllabifier(n)
     val expectedSyllables = 49
     assert(syll.size == expectedSyllables)
   }
@@ -31,7 +31,7 @@ class SyllableSourceSpec extends FlatSpec {
       val txt = "1.2.0.0 1.2.0.0 0.12.0.0-1.3.0.0"
       val u = CtsUrn("urn:cts:chant:antiphonary.eins121.mid:nativity.3")
       val cn = CitableNode(u,txt)
-      val sylls = Syllable(cn)
+      val sylls = Syllabifier(cn)
 
       val expectedSyllables = 3
       assert(sylls.size == expectedSyllables)
