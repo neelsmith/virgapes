@@ -57,7 +57,6 @@ import scala.scalajs.js.annotation._
         true
       }
     }
-
   }
 }
 
