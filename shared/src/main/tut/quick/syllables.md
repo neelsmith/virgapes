@@ -19,8 +19,6 @@ assert(sylls.size == 3)
 
 The first syllable has one neume, a punctum.
 
-
-
 ```tut:silent
 assert (sylls(0).size == 1)
 assert(sylls(0).neumes(0).neumeType.get == Punctum)
