@@ -11,7 +11,7 @@ package edu.holycross.shot.virgapes
 case class PairedSyllable(textString: String, syllable: Syllable) {
 
 
-  require(textString.split("-").size == syllable.size, "PairedSyllable: unequal number of syllables in " + textString + " and " + syllable)
+  //require(textString.split("-").size == syllable.size, "PairedSyllable: unequal number of syllables in " + textString + " and " + syllable)
 
 
   def interleave = {

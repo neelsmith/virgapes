@@ -7,7 +7,7 @@ import org.scalatest.FlatSpec
 */
 class PairedSyllableSpec extends FlatSpec {
 
-  "A PairedSyllable" should "require equal numbers of syllables" in {
+  "A PairedSyllable" should "require equal numbers of syllables" in pending /* {
     try {
       val txtSylls = "pu-er"
       val nm = Neume(1,1,0,0)
@@ -20,5 +20,5 @@ class PairedSyllableSpec extends FlatSpec {
       }
       case t: Throwable => fail("Should have thrown assertion error, but threw " + t)
     }
-  }
+  }*/
 }

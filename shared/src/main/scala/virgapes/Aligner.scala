@@ -34,10 +34,57 @@ object Aligner {
     syllables
   }
 
+  /** Recursively process vector of words.
+  */
+  def alignTokens(
+    syllabifiedWords : Vector[Vector[String]],
+    syllabifiedNeumes: Vector[Syllable],
+    syllableIndex : Int = 0,
+    pairings: Vector[Vector[PairedSyllable]] = Vector.empty) : Unit = { //: Vector[Vector[PairedSyllable]] = {
 
+    if (syllabifiedWords.isEmpty) {
+      println("All done! After " + syllableIndex + " syllables out of " + syllabifiedNeumes.size)
+      println(pairings)
 
-  def align(neumes: Vector[Neume], corpus: Corpus): Vector[PairedSyllable] = {
-    Vector.empty[PairedSyllable]
+    } else {
+      val wrd = syllabifiedWords.head
+      val total = syllableIndex + wrd.size
+
+      //print(wrd.mkString("-") + ", " + syllableIndex + "-" + total)
+      if (syllabifiedNeumes.size >= total) {
+        val relevant = syllabifiedNeumes.slice(syllableIndex, total)
+        println("Sliced " + relevant)
+        val zipped = wrd.zip(relevant)
+        for (z <- zipped) {
+          println(z._1 + ", " + z._2)
+          val paired = PairedSyllable(z._1, z._2)
+
+        }
+
+        //zipped.map(PairedSyllable(_._1, _._2 ))
+        //val newPair = PairedSyllable(wrd.mkString("-"), relevant)
+
+        //alignTokens(syllabifiedWords.tail, syllabifiedNeumes, total, pairings ::: newPair)
+        alignTokens(syllabifiedWords.tail, syllabifiedNeumes, total, pairings)
+
+      } else {
+        println("\nRan out of neumes!")
+        println(pairings)
+      }
+
+    }
+  }
+
+  /** Pair syllables in a Latin text with neumes
+  * for the corresponding syllable.
+  * @param neumeSyllables Vector of Syllables of neumes to align with text.
+  * @param corpus Text corpus to align with neumes.
+  */
+  def alignXml(neumeSyllables: Vector[Syllable], corpus: Corpus): Vector[Vector[PairedSyllable]] = {
+    val textSyllables = syllabifyMidXml(corpus)
+    alignTokens(textSyllables, neumeSyllables)
+
+    Vector.empty[Vector[PairedSyllable]]
   }
 
 }
