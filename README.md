@@ -33,7 +33,7 @@ See https://neelsmith.github.io/virgapes/.
 
 and add this to your library dependencies:
 
-    "edu.holycross.shot.cite" %% "ohco2" % VERSION
+    "edu.holycross.shot.cite" %% "virgapes" % VERSION
 
 For maven, ivy or gradle equivalents, refer to <https://bintray.com/neelsmith/maven/virgapes>.
 
