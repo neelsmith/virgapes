@@ -6,9 +6,9 @@ import org.scalatest.FlatSpec
 //import edu.holycross.shot.ohco2._
 
 
-class SyllableObjectSpec extends FlatSpec {
+class SyllabifierObjectSpec extends FlatSpec {
 
-  "The Syllable object" should "make a vector of Syllables from a correctly formatted string" in {
+  "The Syllabifier object" should "make a vector of Syllables from a correctly formatted string" in {
     val neumes = "1.1.0.0"
     val sylls  = Syllabifier(neumes)
     assert(sylls.size == 1)
@@ -26,6 +26,13 @@ class SyllableObjectSpec extends FlatSpec {
   }
 
 
+  it should "create vectors of syllables from XML content" in {
+    val xml = """<ab n="2"> 1.1.0.1-0.12.0.0 2.2.0.0 1.1.0.0
+    <unclear>1.1.0.0</unclear> 1.1.0.0
+    </ab>"""
+    val sylls = Syllabifier.fromXml(xml)
+    println(sylls)
+  }
 
 
 }

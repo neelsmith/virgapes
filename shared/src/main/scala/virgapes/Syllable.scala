@@ -18,36 +18,3 @@ import scala.scalajs.js.annotation._
     neumes.size
   }
 }
-
-/** Factory object for building Vectors of [[Syllable]]s from strings.
-*
-* White space separates syllables.  Hyphens separate neumes for
-* a single syllable.
-*/
-object Syllabifier {
-
-  /** Build a Vector of [[Syllable]]s from a string value.
-  *
-  * @param s String with neume values separated by hyphens.
-  */
-  def apply(s: String): Vector[Syllable] = {
-
-    val syllableStrings = s.split("\\s+").filterNot(_.isEmpty).toVector
-
-    val syllables = for (syll <- syllableStrings) yield {
-      def neumeStrings = syll.split("-").toVector
-      require (neumeStrings.size > 0, "Cannot create syllable from empty string.")
-      val neumes = neumeStrings.map(Neume(_))
-      Syllable(neumes)
-    }
-    syllables.toVector
-  }
-
-  /** Build a Vector of [[Syllable]]s from an OHCO2 CitableNode.
-  *
-  * @param n CitableNode with text content consiting of neumes encoded in virgapes notation.
-  */
-  def apply(n: CitableNode): Vector[Syllable] = {
-    Syllabifier(n.text)
-  }
-}
