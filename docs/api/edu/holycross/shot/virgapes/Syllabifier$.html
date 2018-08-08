@@ -135,6 +135,10 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="edu.holycross.shot">shot</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <span class="separator"></span>
+                        <a class="object" href="Aligner$.html" title=""></a>
+                        <a href="Aligner$.html" title="">Aligner</a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
                         <a class="object" href="Apostrophe$.html" title=""></a>
                         <a href="Apostrophe$.html" title="">Apostrophe</a>
                       </li><li class="current-entities indented4">
@@ -161,6 +165,10 @@
                         <span class="separator"></span>
                         <a class="trait" href="NeumeType.html" title="Taxonomy of neumes."></a>
                         <a href="NeumeType.html" title="Taxonomy of neumes.">NeumeType</a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
+                        <a class="class" href="PairedSyllable.html" title="Association of a syllabified text with a corresponding series of neumes expressed as Strings."></a>
+                        <a href="PairedSyllable.html" title="Association of a syllabified text with a corresponding series of neumes expressed as Strings.">PairedSyllable</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="Pes$.html" title=""></a>
@@ -255,8 +263,8 @@
                         <a href="SignificativeX$.html" title="">SignificativeX</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="" title="Factory object for building Vectors of Syllables from strings."></a>
-                        <a href="" title="Factory object for building Vectors of Syllables from strings.">Syllabifier</a>
+                        <a class="object" href="" title="Factory object for building Vectors of virgapes Syllables from strings."></a>
+                        <a href="" title="Factory object for building Vectors of virgapes Syllables from strings.">Syllabifier</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="class" href="Syllable.html" title="A class representing an ordered sequence of Neumes on a single syllable of text."></a>
@@ -313,7 +321,7 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for building Vectors of <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>s from strings.</p><p>White space separates syllables.  Hyphens separate neumes for
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for building Vectors of virgapes <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>s from strings.</p><p>White space separates syllables.  Hyphens separate neumes for
 a single syllable.</p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
@@ -547,6 +555,26 @@ a single syllable.</p></div><div class="toggleContainer block">
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="edu.holycross.shot.virgapes.Syllabifier#fromXml" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fromXml(xml:String):Vector[edu.holycross.shot.virgapes.Syllable]"></a><a id="fromXml(String):Vector[Syllable]"></a>
+      <span class="permalink">
+      <a href="../../../../edu/holycross/shot/virgapes/Syllabifier$.html#fromXml(xml:String):Vector[edu.holycross.shot.virgapes.Syllable]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fromXml</span><span class="params">(<span name="xml">xml: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Build a Vector of <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>s from the text
+nodes of an XML String.</p><div class="fullcomment"><div class="comment cmt"><p>Build a Vector of <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>s from the text
+nodes of an XML String.
+</p></div><dl class="paramcmts block"><dt class="param">xml</dt><dd class="cmt"><p>String of well-formed XML with text content
+following conventions for representing syllableStrings * of neumes.</p></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">

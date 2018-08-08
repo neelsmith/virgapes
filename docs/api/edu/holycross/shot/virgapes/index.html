@@ -135,6 +135,10 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="edu.holycross.shot">shot</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <span class="separator"></span>
+                        <a class="object" href="Aligner$.html" title=""></a>
+                        <a href="Aligner$.html" title="">Aligner</a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
                         <a class="object" href="Apostrophe$.html" title=""></a>
                         <a href="Apostrophe$.html" title="">Apostrophe</a>
                       </li><li class="current-entities indented4">
@@ -161,6 +165,10 @@
                         <span class="separator"></span>
                         <a class="trait" href="NeumeType.html" title="Taxonomy of neumes."></a>
                         <a href="NeumeType.html" title="Taxonomy of neumes.">NeumeType</a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
+                        <a class="class" href="PairedSyllable.html" title="Association of a syllabified text with a corresponding series of neumes expressed as Strings."></a>
+                        <a href="PairedSyllable.html" title="Association of a syllabified text with a corresponding series of neumes expressed as Strings.">PairedSyllable</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="Pes$.html" title=""></a>
@@ -255,8 +263,8 @@
                         <a href="SignificativeX$.html" title="">SignificativeX</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="Syllabifier$.html" title="Factory object for building Vectors of Syllables from strings."></a>
-                        <a href="Syllabifier$.html" title="Factory object for building Vectors of Syllables from strings.">Syllabifier</a>
+                        <a class="object" href="Syllabifier$.html" title="Factory object for building Vectors of virgapes Syllables from strings."></a>
+                        <a href="Syllabifier$.html" title="Factory object for building Vectors of virgapes Syllables from strings.">Syllabifier</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="class" href="Syllable.html" title="A class representing an ordered sequence of Neumes on a single syllable of text."></a>
@@ -389,6 +397,26 @@ for a given number of syllables, and have a name.</p></div><dl class="attributes
                 <span class="name">@JSExportAll</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="edu.holycross.shot.virgapes.PairedSyllable" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PairedSyllableextendsProductwithSerializable"></a><a id="PairedSyllable:PairedSyllable"></a>
+      <span class="permalink">
+      <a href="../../../../edu/holycross/shot/virgapes/index.html#PairedSyllableextendsProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="Association of a syllabified text with a corresponding series of neumes expressed as Strings." href="PairedSyllable.html"><span class="name">PairedSyllable</span></a><span class="params">(<span name="textString">textString: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="syllable">syllable: <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Association of a syllabified text with a
+corresponding series of neumes expressed as Strings.</p><div class="fullcomment"><div class="comment cmt"><p>Association of a syllabified text with a
+corresponding series of neumes expressed as Strings.
+</p></div><dl class="paramcmts block"><dt class="param">textString</dt><dd class="cmt"><p>Syllabified text, with hyphen separating
+syllables.</p></dd></dl></div>
     </li><li name="edu.holycross.shot.virgapes.Syllable" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="SyllableextendsProductwithSerializable"></a><a id="Syllable:Syllable"></a>
       <span class="permalink">
@@ -419,7 +447,23 @@ on a single syllable of text.
         <div class="values members">
               <h3>Value Members</h3>
               <ol>
-                <li name="edu.holycross.shot.virgapes.Apostrophe" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+                <li name="edu.holycross.shot.virgapes.Aligner" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Aligner"></a><a id="Aligner:Aligner"></a>
+      <span class="permalink">
+      <a href="../../../../edu/holycross/shot/virgapes/index.html#Aligner" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Aligner$.html"><span class="name">Aligner</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"></p>
+    </li><li name="edu.holycross.shot.virgapes.Apostrophe" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Apostrophe"></a><a id="Apostrophe:Apostrophe"></a>
       <span class="permalink">
       <a href="../../../../edu/holycross/shot/virgapes/index.html#Apostrophe" title="Permalink">
@@ -895,10 +939,10 @@ on a single syllable of text.
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="Factory object for building Vectors of Syllables from strings." href="Syllabifier$.html"><span class="name">Syllabifier</span></a>
+        <a title="Factory object for building Vectors of virgapes Syllables from strings." href="Syllabifier$.html"><span class="name">Syllabifier</span></a>
       </span>
       
-      <p class="shortcomment cmt">Factory object for building Vectors of <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>s from strings.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for building Vectors of <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>s from strings.</p><p>White space separates syllables.  Hyphens separate neumes for
+      <p class="shortcomment cmt">Factory object for building Vectors of virgapes <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>s from strings.</p><div class="fullcomment"><div class="comment cmt"><p>Factory object for building Vectors of virgapes <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>s from strings.</p><p>White space separates syllables.  Hyphens separate neumes for
 a single syllable.</p></div></div>
     </li><li name="edu.holycross.shot.virgapes.Torculus" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Torculus"></a><a id="Torculus:Torculus"></a>
