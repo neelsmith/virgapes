@@ -10,11 +10,20 @@ package edu.holycross.shot.virgapes
 */
 case class AlignedWord(syllables : Vector[PairedSyllable]) {
 
+  def word : String = {
+    syllables.map(_.textString).mkString("")
+  }
   def text: String = {
     syllables.map(_.textString).mkString("-")
   }
+  def neumes : String = {
+    val syllStrs = syllables.map(_.syllable.toString)
+    //println("From " + syllables + ", got " + syllStrs)
+    syllables.map(_.syllable.toString).mkString(" ")
+  }
 
-  def interleave = {
-
+  def interleave(separator: String = "\n") = {
+    val interleaved = syllables.map(s =>  s"${s.textString} ${s.syllable}")
+    interleaved.mkString(separator)
   }
 }
