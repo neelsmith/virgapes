@@ -263,8 +263,8 @@
                         <a href="SignificativeX$.html" title="">SignificativeX</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="" title="Factory object for building Vectors of virgapes Syllables from strings."></a>
-                        <a href="" title="Factory object for building Vectors of virgapes Syllables from strings.">Syllabifier</a>
+                        <a class="object" href="" title="Factory object for building Vectors of virgapes Syllables from various kinds of sources."></a>
+                        <a href="" title="Factory object for building Vectors of virgapes Syllables from various kinds of sources.">Syllabifier</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="class" href="Syllable.html" title="A class representing an ordered sequence of Neumes on a single syllable of text."></a>
@@ -321,8 +321,8 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for building Vectors of virgapes <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>s from strings.</p><p>White space separates syllables.  Hyphens separate neumes for
-a single syllable.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Factory object for building Vectors of virgapes <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>s from various kinds of sources.</p><p>In the String serialization, white space separates syllables.
+Hyphens separate neumes for a single syllable.</p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -574,7 +574,27 @@ a single syllable.</p></div><div class="toggleContainer block">
 nodes of an XML String.</p><div class="fullcomment"><div class="comment cmt"><p>Build a Vector of <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>s from the text
 nodes of an XML String.
 </p></div><dl class="paramcmts block"><dt class="param">xml</dt><dd class="cmt"><p>String of well-formed XML with text content
-following conventions for representing syllableStrings * of neumes.</p></dd></dl></div>
+following conventions for representing syllableStrings
+of neumes.</p></dd></dl></div>
+    </li><li name="edu.holycross.shot.virgapes.Syllabifier#fromXmlCorpus" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fromXmlCorpus(c:edu.holycross.shot.ohco2.Corpus):Vector[edu.holycross.shot.virgapes.Syllable]"></a><a id="fromXmlCorpus(Corpus):Vector[Syllable]"></a>
+      <span class="permalink">
+      <a href="../../../../edu/holycross/shot/virgapes/Syllabifier$.html#fromXmlCorpus(c:edu.holycross.shot.ohco2.Corpus):Vector[edu.holycross.shot.virgapes.Syllable]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fromXmlCorpus</span><span class="params">(<span name="c">c: <span class="extype" name="edu.holycross.shot.ohco2.Corpus">Corpus</span></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Build a Vector of <a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>s from an OHCO2
+Corpus of XML documents, where text nodes of the
+follow conventions for representing strings
+of neumes.</p>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
