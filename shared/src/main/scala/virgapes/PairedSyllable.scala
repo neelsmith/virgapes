@@ -8,9 +8,10 @@ package edu.holycross.shot.virgapes
 * @param neume Neume.
 *
 */
-case class PairedNeume(textString: String, neume: Neume) {
+case class PairedSyllable(textString: String, syllable: Syllable) {
 
-  //require(textString.split("-").size == neumeString.split(" ").size, "StringPair: unequal syllables in " + textString + " and " + neumeString)
+
+  require(textString.split("-").size == syllable.size, "PairedSyllable: unequal number of syllables in " + textString + " and " + syllable)
 
 
   def interleave = {

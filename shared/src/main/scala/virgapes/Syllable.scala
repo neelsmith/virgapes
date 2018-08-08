@@ -17,4 +17,9 @@ import scala.scalajs.js.annotation._
   def size: Int = {
     neumes.size
   }
+
+  /** Human readable display using names of neumes.*/
+  override def toString = {
+    neumes.map(_.name).mkString("+")
+  }
 }

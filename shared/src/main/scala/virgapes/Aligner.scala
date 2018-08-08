@@ -35,8 +35,8 @@ object Aligner {
 
 
 
-  def align(neumes: Vector[Neume], corpus: Corpus): Vector[PairedNeume] = {
-    Vector.empty[PairedNeume]
+  def align(neumes: Vector[Neume], corpus: Corpus): Vector[PairedSyllable] = {
+    Vector.empty[PairedSyllable]
   }
 
 }
