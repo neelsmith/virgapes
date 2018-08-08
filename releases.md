@@ -1,5 +1,8 @@
 # `virgapes`: release notes
 
+
+**3.4.0**:  Adds `AlignedWord` class.
+
 **3.3.0**: `Aligner` object supports aligning directly from two parallel corpora, one of neumes in XML, and one of text in XML following HC MID conventions.
 
 
