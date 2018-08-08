@@ -81,9 +81,27 @@ object Aligner {
   * @param corpus Text corpus to align with neumes.
   */
   def alignXml(neumeSyllables: Vector[Syllable], corpus: Corpus): Vector[Vector[PairedSyllable]] = {
-    val textSyllables = syllabifyMidXml(corpus)
-    alignTokens(textSyllables, neumeSyllables)
+    val textSyllables = syllabifyMidXml(corpus).map(_.mkString("-"))
+    //alignTokens(textSyllables, neumeSyllables)
 
+    if (textSyllables.size != neumeSyllables.size) {
+      println("Aligner: unequal number of syllables in text and neumes")
+      println("Number text syllables:  " + textSyllables.size)
+      println("Number neume syllables:  " + neumeSyllables.size)
+      throw new Exception("Aligner: unequal number of syllables in text and neumes.")
+    } else {
+      for ((ts, count) <- textSyllables.zipWithIndex) {
+        println(ts + " == " + neumeSyllables(count))
+      }
+      //println(textSyllables)
+      //println(neumeSyllables)
+      //val zipped = textSyllables.zip(neumeSyllables)
+
+      //for (z <- zipped) {
+      //  println(z._1 + ", " + z._2)
+    //  }//
+
+    }
     Vector.empty[Vector[PairedSyllable]]
   }
 

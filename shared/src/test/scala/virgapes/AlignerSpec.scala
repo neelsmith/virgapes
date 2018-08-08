@@ -45,7 +45,7 @@ class AlignerSpec extends FlatSpec {
 
     val neumeXml = """<ab n="1"> 0.7.0.0-0.10.0.0-2.2.0.0-0.7.0.0-0.10.0.0
     0.5.0.0-1.1.0.0
-    0.5.0.0-3.2.0.0 1.2.1.0
+    0.5.0.0-3.2.0.0 
     </ab>"""
     val neumeSylls = Syllabifier.fromXml(neumeXml)
 
