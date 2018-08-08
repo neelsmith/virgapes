@@ -34,6 +34,7 @@ object Aligner {
     syllables
   }
 
+
   /** Recursively process vector of words.
   */
   def alignTokens(

@@ -1,6 +1,7 @@
 package edu.holycross.shot.virgapes
 import org.scalatest.FlatSpec
 
+import edu.holycross.shot.ohco2._
 
 //import edu.holycross.shot.cite._
 //import edu.holycross.shot.ohco2._
@@ -32,6 +33,17 @@ class SyllabifierObjectSpec extends FlatSpec {
     </ab>"""
     val sylls = Syllabifier.fromXml(xml)
     println(sylls)
+  }
+
+  it should "create syllabify text from an OHCO2 Corpus of XML documents"in {
+    val cex = """urn:cts:chant:antiphonary.einsiedeln121.text_xml:11.introit.1#<ab n="1">0.7.0.0-0.10.0.0-2.2.0.0-0.7.0.0-0.10.0.0</ab>"""
+    val cex2 =  """urn:cts:chant:antiphonary.einsiedeln121.text_xml:11.introit.2#<ab n="2">1.1.0.1-0.12.0.0 2.2.0.0 1.1.0.0 1.1.0.0 1.1.0.0 1.1.0.0</ab>"""
+
+    val c = Corpus (cex + "\n" + cex2)
+    val sylls = Syllabifier.fromXmlCorpus(c)
+    val expectedSize = 7
+    assert(sylls.size == expectedSize)
+
   }
 
 

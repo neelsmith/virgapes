@@ -1,5 +1,7 @@
 # `virgapes`: release notes
 
+**3.2.0**: adds function to `Syllabifier` object to syllabify an OHCO2 corpus of XML text of neumes.
+
 
 **3.1.0**: adds `StringPair` class with functions for coordinated display of text and neumes.
 

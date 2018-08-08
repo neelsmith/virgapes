@@ -37,6 +37,8 @@ class AlignerSpec extends FlatSpec {
     assert(syllabified(7) == expectedLast)
   }
 
+
+
   it should "align syllables of Latin text with syllables of neumes" in {
     val urn = CtsUrn("urn:cts:chant:antiphonary.einsiedeln121.text_xml:11.introit.1")
     val  textXml = """<ab n="1">Puer natus est...</ab>"""
@@ -45,7 +47,7 @@ class AlignerSpec extends FlatSpec {
 
     val neumeXml = """<ab n="1"> 0.7.0.0-0.10.0.0-2.2.0.0-0.7.0.0-0.10.0.0
     0.5.0.0-1.1.0.0
-    0.5.0.0-3.2.0.0 
+    0.5.0.0-3.2.0.0
     </ab>"""
     val neumeSylls = Syllabifier.fromXml(neumeXml)
 

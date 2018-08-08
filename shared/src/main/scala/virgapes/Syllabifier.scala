@@ -5,10 +5,10 @@ import edu.holycross.shot.ohco2._
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
-/** Factory object for building Vectors of virgapes [[Syllable]]s from strings.
+/** Factory object for building Vectors of virgapes [[Syllable]]s from various kinds of sources.
 *
-* White space separates syllables.  Hyphens separate neumes for
-* a single syllable.
+* In the String serialization, white space separates syllables.
+* Hyphens separate neumes for a single syllable.
 */
 object Syllabifier {
 
@@ -17,7 +17,8 @@ object Syllabifier {
   * nodes of an XML String.
   *
   * @param xml String of well-formed XML with text content
-  * following conventions for representing syllableStrings * of neumes.
+  * following conventions for representing syllableStrings
+  * of neumes.
   */
   def fromXml(xml: String) : Vector[Syllable] = {
     val plainText = edu.holycross.shot.mid.latinmodel.collectText(xml)
@@ -47,5 +48,19 @@ object Syllabifier {
   */
   def apply(n: CitableNode): Vector[Syllable] = {
     Syllabifier(n.text)
+  }
+
+  /** Build a Vector of [[Syllable]]s from an OHCO2
+  * Corpus of XML documents, where text nodes of the
+  * follow conventions for representing strings
+  * of neumes.
+  *
+  * @param xml String of well-formed XML with text content
+  * following conventions for representing syllableStrings
+  * of neumes.
+  */
+  def fromXmlCorpus(c: Corpus): Vector[Syllable] = {
+
+    c.nodes.map( n => Syllabifier.fromXml(n.text)).flatten
   }
 }
