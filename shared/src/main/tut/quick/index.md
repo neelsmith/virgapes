@@ -17,4 +17,4 @@ Key classes:
 
 -  creating and working with [individual neumes](neumes)
 -  creating and working [syllables](syllables) (of one or more neumes)
--  creating and working with syllables and neuems from [citable passages of text](passages)
+-  creating and working with syllables and neumes from [citable passages of text](passages)
