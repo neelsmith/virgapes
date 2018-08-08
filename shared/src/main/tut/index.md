@@ -8,7 +8,7 @@ title: Virgapes library
 
 
 -   [Quick start](quick)
--   [API docs](api/edu/holycross/shot/virgapes/index.html): version **2.0.0**
+-   [API docs](api/edu/holycross/shot/virgapes/index.html): version **3.0.0**
 -   [Github repository](https://github.com/neelsmith/virgapes)
 
 
@@ -18,4 +18,4 @@ title: Virgapes library
 
 The Virgapes alphabet defines a system for encoding neumes. It was designed by members of the Chant team of the Holy Cross MID Club.
 
-See some initial docs on the notation in this page from their wiki:  <https://github.com/HCMID/chant/wiki/The-Virgapes-System>
+See some initial docs on the notation in this page from their project wiki:  <https://github.com/HCMID/chant/wiki/The-Virgapes-System>

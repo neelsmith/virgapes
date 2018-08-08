@@ -12,7 +12,7 @@ import scala.scalajs.js.annotation._
 * @param episema Syllable marked with episema, if any.
 * @param liquescence Whether or not this neume has liquescence.
 */
-@JSExportAll case class Neume(pitches: Int, neume: Int, episema: Int, liquescence: Boolean) {
+@JSExportAll case class Neume(pitches: Int, neume: Int, episema: Int, liquescence: Int) {
   require(validNeume)
 
   def neumeType: Option[NeumeType] = {
@@ -83,9 +83,9 @@ object Neume {
   * neume ID, episema, and liquescence, respectively.
   */
   def apply(v: Vector[Int]): Neume = {
-    require(v.size == 4, "Wrong number of components in " + v + s" (v.size)")
-    val liquescence = v(3) > 0
-    Neume(v(0), v(1), v(2), liquescence)
+    require(v.size == 4, "Neume:  wrong number of components in " + v + s" (v.size)")
+
+    Neume(v(0), v(1), v(2), v(3))
   }
 
 

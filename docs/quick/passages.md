@@ -23,5 +23,5 @@ assert (cited1.size == 1)
 val citedNeume1 = cited1.neumes(0)
 assert(citedNeume1.neumeType.get == Punctum)
 assert(citedNeume1.episema == 0)
-assert(citedNeume1.liquescence == false)
+assert(citedNeume1.liquescence == 0)
 ```

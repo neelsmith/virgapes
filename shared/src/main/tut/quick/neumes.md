@@ -4,14 +4,11 @@ title:  Neumes
 ---
 
 
-Import the library:
-
-
 
 
 The basic object in the library is a `Neume`.  You can create it from a `String` in virgapes notation, and then work with the neume's components.
 
-Example:  the string `1.2.0.0` represents a one-syllable neume with ID 2, no episema (ie, episema on syllable 0), and no liquescence.
+Example:  the string `1.2.0.0` represents a one-syllable neume with ID 2, no episema (ie, episema on syllable 0), and no liquescence (ie, liquescenceon syllable 0).
 
 
 ```tut:silent
@@ -21,7 +18,7 @@ val neume = Neume("1.2.0.0")
 assert(neume.name == "punctum")
 assert(neume.pitches == 1)
 assert(neume.episema == 0)
-assert(neume.liquescence == false)
+assert(neume.liquescence == 0)
 ```
 
 You can also retrieve a `NeumeType`  option for a `Neume`.

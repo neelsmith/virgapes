@@ -8,7 +8,7 @@ import org.scalatest.FlatSpec
 class SyllableSpec extends FlatSpec {
 
   "A Syllable" should "have a non-empty vector of neumes" in {
-    val neumes = Vector(Neume(1,1,0,false))
+    val neumes = Vector(Neume(1,1,0,0))
     val syll  = Syllable(neumes)
     assert(syll.size > 0)
   }

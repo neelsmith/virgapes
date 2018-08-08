@@ -13,7 +13,7 @@ class NeumeObjectSpec extends FlatSpec {
     assert(neume.pitches == 1)
     assert(neume.neume == 1)
     assert(neume.episema == 0)
-    assert(neume.liquescence == false)
+    assert(neume.liquescence == 0)
   }
 
   it should "build Neuemes from Vectors of Ints" in {
@@ -21,7 +21,7 @@ class NeumeObjectSpec extends FlatSpec {
     assert(neume.pitches == 1)
     assert(neume.neume == 1)
     assert(neume.episema == 0)
-    assert(neume.liquescence == false)
+    assert(neume.liquescence == 0)
   }
 
   it should "find NeumeType for values" in {
@@ -38,6 +38,6 @@ class NeumeObjectSpec extends FlatSpec {
     assert(Neume.neumeType(0,11).get == SignificativeS)
     assert(Neume.neumeType(0,12).get == SignificativeT)
     assert(Neume.neumeType(0,13).get == SignificativeV)
-    assert(Neume.neumeType(0,14).get == SignificativeX)            
+    assert(Neume.neumeType(0,14).get == SignificativeX)
   }
 }
