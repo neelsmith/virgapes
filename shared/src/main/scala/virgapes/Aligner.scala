@@ -7,7 +7,9 @@ import edu.holycross.shot.latin._
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
-/**
+/** Object for aligning texts and neumes from
+* different kinds of sources, and creating
+* Vectors of [[PairedSyllable]]s.
 */
 object Aligner {
 
@@ -41,38 +43,29 @@ object Aligner {
     syllabifiedWords : Vector[Vector[String]],
     syllabifiedNeumes: Vector[Syllable],
     syllableIndex : Int = 0,
-    pairings: Vector[Vector[PairedSyllable]] = Vector.empty) : Unit = { //: Vector[Vector[PairedSyllable]] = {
+    pairings: Vector[Vector[PairedSyllable]] = Vector.empty) :  Vector[Vector[PairedSyllable]] = {
 
     if (syllabifiedWords.isEmpty) {
-      println("All done! After " + syllableIndex + " syllables out of " + syllabifiedNeumes.size)
-      println(pairings)
+      pairings
 
     } else {
       val wrd = syllabifiedWords.head
       val total = syllableIndex + wrd.size
 
-      //print(wrd.mkString("-") + ", " + syllableIndex + "-" + total)
       if (syllabifiedNeumes.size >= total) {
         val relevant = syllabifiedNeumes.slice(syllableIndex, total)
-        println("Sliced " + relevant)
         val zipped = wrd.zip(relevant)
-        for (z <- zipped) {
-          println(z._1 + ", " + z._2)
-          val paired = PairedSyllable(z._1, z._2)
-
+        val pairs = for (z <- zipped) yield {
+          PairedSyllable(z._1, z._2)
         }
-
-        //zipped.map(PairedSyllable(_._1, _._2 ))
-        //val newPair = PairedSyllable(wrd.mkString("-"), relevant)
-
-        //alignTokens(syllabifiedWords.tail, syllabifiedNeumes, total, pairings ::: newPair)
-        alignTokens(syllabifiedWords.tail, syllabifiedNeumes, total, pairings)
+        val updated = pairings :+ pairs
+        alignTokens(syllabifiedWords.tail, syllabifiedNeumes, total, updated)
 
       } else {
         println("\nRan out of neumes!")
-        println(pairings)
+        println(pairings )
+        pairings
       }
-
     }
   }
 
@@ -82,16 +75,17 @@ object Aligner {
   * @param corpus Text corpus to align with neumes.
   */
   def alignXml(neumeSyllables: Vector[Syllable], corpus: Corpus): Vector[Vector[PairedSyllable]] = {
-    val textSyllables = syllabifyMidXml(corpus).map(_.mkString("-"))
+    val wordSyllables = syllabifyMidXml(corpus)//.map(_.mkString("-"))
     //alignTokens(textSyllables, neumeSyllables)
+    val syllCounts  = wordSyllables.map(_.size).sum
 
-    if (textSyllables.size != neumeSyllables.size) {
+    if (syllCounts != neumeSyllables.size) {
       println("Aligner: unequal number of syllables in text and neumes")
-      println("Number text syllables:  " + textSyllables.size)
+      println("Number text syllables:  " + wordSyllables.size)
       println("Number neume syllables:  " + neumeSyllables.size)
       throw new Exception("Aligner: unequal number of syllables in text and neumes.")
     } else {
-      for ((ts, count) <- textSyllables.zipWithIndex) {
+      for ((ts, count) <- wordSyllables.zipWithIndex) {
         println(ts + " == " + neumeSyllables(count))
       }
       //println(textSyllables)
@@ -106,4 +100,9 @@ object Aligner {
     Vector.empty[Vector[PairedSyllable]]
   }
 
+  def alignMidCorpora(neumes: Corpus, texts: Corpus) = { //: Vector[Vector[PairedSyllable]] = {
+    def syllabifiedWords = syllabifyMidXml(texts)
+    def syllabifiedNeumes = Syllabifier.fromXmlCorpus(neumes)
+    alignTokens(syllabifiedWords, syllabifiedNeumes)
+  }
 }

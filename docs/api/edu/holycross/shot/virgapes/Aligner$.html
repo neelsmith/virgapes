@@ -135,8 +135,8 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="edu.holycross.shot">shot</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="" title=""></a>
-                        <a href="" title="">Aligner</a>
+                        <a class="object" href="" title="Object for aligning texts and neumes from different kinds of sources, and creating Vectors of PairedSyllables."></a>
+                        <a href="" title="Object for aligning texts and neumes from different kinds of sources, and creating Vectors of PairedSyllables.">Aligner</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="Apostrophe$.html" title=""></a>
@@ -321,7 +321,9 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Object for aligning texts and neumes from
+different kinds of sources, and creating
+Vectors of <a href="PairedSyllable.html" class="extype" name="edu.holycross.shot.virgapes.PairedSyllable">PairedSyllable</a>s.</p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -426,10 +428,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="edu.holycross.shot.virgapes.Aligner#alignTokens" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="alignTokens(syllabifiedWords:Vector[Vector[String]],syllabifiedNeumes:Vector[edu.holycross.shot.virgapes.Syllable],syllableIndex:Int,pairings:Vector[Vector[edu.holycross.shot.virgapes.PairedSyllable]]):Unit"></a><a id="alignTokens(Vector[Vector[String]],Vector[Syllable],Int,Vector[Vector[PairedSyllable]]):Unit"></a>
+    </li><li name="edu.holycross.shot.virgapes.Aligner#alignMidCorpora" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="alignMidCorpora(neumes:edu.holycross.shot.ohco2.Corpus,texts:edu.holycross.shot.ohco2.Corpus):Vector[Vector[edu.holycross.shot.virgapes.PairedSyllable]]"></a><a id="alignMidCorpora(Corpus,Corpus):Vector[Vector[PairedSyllable]]"></a>
       <span class="permalink">
-      <a href="../../../../edu/holycross/shot/virgapes/Aligner$.html#alignTokens(syllabifiedWords:Vector[Vector[String]],syllabifiedNeumes:Vector[edu.holycross.shot.virgapes.Syllable],syllableIndex:Int,pairings:Vector[Vector[edu.holycross.shot.virgapes.PairedSyllable]]):Unit" title="Permalink">
+      <a href="../../../../edu/holycross/shot/virgapes/Aligner$.html#alignMidCorpora(neumes:edu.holycross.shot.ohco2.Corpus,texts:edu.holycross.shot.ohco2.Corpus):Vector[Vector[edu.holycross.shot.virgapes.PairedSyllable]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -438,7 +440,23 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">alignTokens</span><span class="params">(<span name="syllabifiedWords">syllabifiedWords: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="syllabifiedNeumes">syllabifiedNeumes: <span class="extype" name="scala.Vector">Vector</span>[<a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>]</span>, <span name="syllableIndex">syllableIndex: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="pairings">pairings: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Vector">Vector</span>[<a href="PairedSyllable.html" class="extype" name="edu.holycross.shot.virgapes.PairedSyllable">PairedSyllable</a>]] = <span class="symbol">Vector.empty</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">alignMidCorpora</span><span class="params">(<span name="neumes">neumes: <span class="extype" name="edu.holycross.shot.ohco2.Corpus">Corpus</span></span>, <span name="texts">texts: <span class="extype" name="edu.holycross.shot.ohco2.Corpus">Corpus</span></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Vector">Vector</span>[<a href="PairedSyllable.html" class="extype" name="edu.holycross.shot.virgapes.PairedSyllable">PairedSyllable</a>]]</span>
+      </span>
+      
+      
+    </li><li name="edu.holycross.shot.virgapes.Aligner#alignTokens" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="alignTokens(syllabifiedWords:Vector[Vector[String]],syllabifiedNeumes:Vector[edu.holycross.shot.virgapes.Syllable],syllableIndex:Int,pairings:Vector[Vector[edu.holycross.shot.virgapes.PairedSyllable]]):Vector[Vector[edu.holycross.shot.virgapes.PairedSyllable]]"></a><a id="alignTokens(Vector[Vector[String]],Vector[Syllable],Int,Vector[Vector[PairedSyllable]]):Vector[Vector[PairedSyllable]]"></a>
+      <span class="permalink">
+      <a href="../../../../edu/holycross/shot/virgapes/Aligner$.html#alignTokens(syllabifiedWords:Vector[Vector[String]],syllabifiedNeumes:Vector[edu.holycross.shot.virgapes.Syllable],syllableIndex:Int,pairings:Vector[Vector[edu.holycross.shot.virgapes.PairedSyllable]]):Vector[Vector[edu.holycross.shot.virgapes.PairedSyllable]]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">alignTokens</span><span class="params">(<span name="syllabifiedWords">syllabifiedWords: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="syllabifiedNeumes">syllabifiedNeumes: <span class="extype" name="scala.Vector">Vector</span>[<a href="Syllable.html" class="extype" name="edu.holycross.shot.virgapes.Syllable">Syllable</a>]</span>, <span name="syllableIndex">syllableIndex: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="pairings">pairings: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Vector">Vector</span>[<a href="PairedSyllable.html" class="extype" name="edu.holycross.shot.virgapes.PairedSyllable">PairedSyllable</a>]] = <span class="symbol">Vector.empty</span></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Vector">Vector</span>[<a href="PairedSyllable.html" class="extype" name="edu.holycross.shot.virgapes.PairedSyllable">PairedSyllable</a>]]</span>
       </span>
       
       <p class="shortcomment cmt">Recursively process vector of words.</p>

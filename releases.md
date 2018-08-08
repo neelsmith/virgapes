@@ -1,5 +1,8 @@
 # `virgapes`: release notes
 
+**3.3.0**: `Aligner` object supports aligning directly from two parallel corpora, one of neumes in XML, and one of text in XML following HC MID conventions.
+
+
 **3.2.0**: adds function to `Syllabifier` object to syllabify an OHCO2 corpus of XML text of neumes.
 
 

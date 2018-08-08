@@ -11,7 +11,7 @@ class AlignerSpec extends FlatSpec {
 
 
 
-  "The Aligner object" should "syllabify a corpus of MID-complinat XML of Latin text into a Vector of lower case strings" in {
+  "The Aligner object" should "syllabify a corpus of MID-compliant XML of Latin text into a Vector of lower case strings" in {
     val urn = CtsUrn("urn:cts:chant:antiphonary.einsiedeln121.text_xml:11.introit.1")
     val  xmlSrc = """<ab n="1">Puer</ab>"""
     val cn = CitableNode(urn, xmlSrc)
@@ -40,17 +40,18 @@ class AlignerSpec extends FlatSpec {
 
 
   it should "align syllables of Latin text with syllables of neumes" in {
-    val urn = CtsUrn("urn:cts:chant:antiphonary.einsiedeln121.text_xml:11.introit.1")
-    val  textXml = """<ab n="1">Puer natus est...</ab>"""
-    val cn = CitableNode(urn, textXml)
-    val c = Corpus(Vector(cn))
+    val textCex = """urn:cts:chant:antiphonary.einsiedeln121.text_xml:11.introit.1#<ab n="1">Puer natus est...</ab>"""
+    val text = Corpus(textCex)
 
-    val neumeXml = """<ab n="1"> 0.7.0.0-0.10.0.0-2.2.0.0-0.7.0.0-0.10.0.0
-    0.5.0.0-1.1.0.0
-    0.5.0.0-3.2.0.0
-    </ab>"""
-    val neumeSylls = Syllabifier.fromXml(neumeXml)
+    val neumeCex = """urn:cts:chant:antiphonary.einsiedeln121.neumes_xml:11.introit.1#<ab n="1"> 0.7.0.0-0.10.0.0-2.2.0.0-0.7.0.0-0.10.0.0 0.5.0.0-1.1.0.0  0.5.0.0-3.2.0.0 1.2.1.0 3.5.0.0</ab>"""
+    val neumes = Corpus(neumeCex)
 
-    Aligner.alignXml(neumeSylls, c)
+    val alignment = Aligner.alignMidCorpora(neumes, text)
+    val expectedWords = 3
+    assert(alignment.size == expectedWords)
+
+    val expectedSyllables = 5
+    val actualSyllables = alignment.map(_.size).sum
+    assert(actualSyllables == expectedSyllables)
   }
 }
