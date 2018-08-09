@@ -3,19 +3,18 @@ layout:  page
 title: Virgapes library
 ---
 
+The Virgapes notation defines a system for encoding neumes. It was designed by members of the Chant team of the Holy Cross MID Club.  You can find initial information about the notation from their project wiki at  <https://github.com/HCMID/chant/wiki/The-Virgapes-System>.
+
+
+This site is about a cross-platform code library named `virgapes`.  It is written in the Scala language, and can be compiled either for Java Virtual Machine, or Javascript. The `virgapes` library supports working with data encoded in the Virgapes notation.
+
+
+
+
+
 
 ## Links
 
-
--   [Quick start](quick)
+-   [Getting started with the `virgapes` library](quick)
 -   [API docs](api/edu/holycross/shot/virgapes/index.html): version **3.4.0**
--   [Github repository](https://github.com/neelsmith/virgapes)
-
-
-## About
-
-`virgapes` is a cross-platform library for working with chant encoded in the Virgapes alphabet.
-
-The Virgapes alphabet defines a system for encoding neumes. It was designed by members of the Chant team of the Holy Cross MID Club.
-
-See some initial docs on the notation in this page from their project wiki:  <https://github.com/HCMID/chant/wiki/The-Virgapes-System>
+-   Source code:  [`virgapes` github repository](https://github.com/neelsmith/virgapes)
