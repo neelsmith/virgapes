@@ -54,4 +54,10 @@ class NeumeSpec extends FlatSpec {
     val neume = Neume(1,1,0,0)
     assert(neume.pitches == neume.neumeType.get.pitches  )
   }
+
+  it should "serialize to Virgapes format" in {
+    val neume = Neume(1,1,0,0)
+    val expected = "1.1.0.0"
+    assert(neume.toString == expected)
+  }
 }

@@ -15,6 +15,12 @@ import scala.scalajs.js.annotation._
 @JSExportAll case class Neume(pitches: Int, neume: Int, episema: Int, liquescence: Int) {
   require(validNeume)
 
+
+  /** Serialize to Virgapes format. */
+  override def toString: String = {
+    s"${pitches}.${neume}.${episema}.${liquescence}"
+  }
+
   def neumeType: Option[NeumeType] = {
     Neume.neumeType(pitches, neume)
   }
