@@ -24,7 +24,7 @@ class AlignedWordSpec extends FlatSpec {
   }
 
   it should "display nemes in conventional string form" in {
-    val expected = "k+p+pes+k+p f+virga"
+    val expected = "i+m+pes+i+m e+virga"
     assert(word1.neumes == expected)
   }
 
@@ -35,12 +35,12 @@ class AlignedWordSpec extends FlatSpec {
 
 
   it should "interleave text and neumes by syllable" in {
-    val expected = "pu k+p+pes+k+p#er f+virga"
+    val expected = "pu i+m+pes+i+m#er e+virga"
     assert(word1.interleave("#") == expected)
   }
 
   it should "default to separating bynew line in interleave" in  {
-      val expected = "pu k+p+pes+k+p\ner f+virga"
+      val expected = "pu i+m+pes+i+m\ner e+virga"
       assert(word1.interleave() == expected)
   }
 }

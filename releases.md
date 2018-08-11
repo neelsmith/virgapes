@@ -1,5 +1,7 @@
 # `virgapes`: release notes
 
+**3.5.1**: fixes off-by-one bug in encoding of some significative letters.
+
 **3.5.0**:  `toString` on `Neume`s now serializes to Virgapes format.
 
 **3.4.0**:  Adds `AlignedWord` class.
