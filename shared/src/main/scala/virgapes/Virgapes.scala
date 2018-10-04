@@ -13,14 +13,23 @@ case class Virgapes(domain: CtsUrn) extends MidOrthography {
 
   def orthography = "Virgapes"
 
+  // named code points
+  /** Tab character.*/
   val tab = 0x9
+  /** Newline character.*/
   val nl = 0xA
+  /** Carriage return character.*/
   val cr = 0xD
+  /** Space character.*/
   val space = 0x20
+  /** Collection of all whitespace characters.*/
   val whiteSpace = Vector(space, tab, nl, cr)
 
+  /** Period character.*/
   val period = 0x2e
+  /** Hyphen character.*/
   val hyphen = 0x2d
+  /** Digits 0 to 9.*/
   val digits = (0x30 to 0x39).toVector
 
   /** All valid code points. */
