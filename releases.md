@@ -1,5 +1,8 @@
 # `virgapes`: release notes
 
+
+**3.6.0**:  Implement `MidOrthography` orthography trait.
+
 **3.5.1**: fixes off-by-one bug in encoding of some significative letters.
 
 **3.5.0**:  `toString` on `Neume`s now serializes to Virgapes format.

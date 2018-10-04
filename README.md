@@ -12,7 +12,7 @@ The Virgapes alphabet defines a system for encoding neumes. It was designed by m
 
 See some initial docs on the system in this wiki from their wiki:  <https://github.com/HCMID/chant/wiki/The-Virgapes-System>
 
-## Current version: **3.5.1**
+## Current version: **3.6.0**
 
 Status: **active development**. [Release notes](releases.md)
 
