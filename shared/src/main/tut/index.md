@@ -19,5 +19,5 @@ This site is about a cross-platform code library named `virgapes`.  It is writte
 ## Links
 
 -   [Getting started with the `virgapes` library](quick)
--   [API docs](api/edu/holycross/shot/virgapes/index.html): version **3.4.0**
+-   [API docs](api/edu/holycross/shot/virgapes/index.html): version **3.6.0**
 -   Source code:  [`virgapes` github repository](https://github.com/neelsmith/virgapes)
