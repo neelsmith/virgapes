@@ -11,6 +11,7 @@ import edu.holycross.shot.mid.validator._
 */
 case class Virgapes(domain: CtsUrn) extends MidOrthography {
 
+  /** Name of orthographic system implementing MidOrthogaphy.*/
   def orthography = "Virgapes"
 
   // named code points
