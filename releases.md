@@ -1,6 +1,8 @@
 # `virgapes`: release notes
 
 
+**3.7.0**:  Add new `VirgapesSyllables` class.
+
 **3.6.0**:  Implement `MidOrthography` orthography trait.
 
 **3.5.1**: fixes off-by-one bug in encoding of some significative letters.

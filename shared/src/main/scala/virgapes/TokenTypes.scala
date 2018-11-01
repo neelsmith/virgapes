@@ -17,6 +17,11 @@ case object NeumeToken extends MidTokenCategory {
 }
 
 
+/** A punctuation token.*/
+case object NeumeSyllableToken extends MidTokenCategory {
+  def name = "neume syllable"
+}
+
 // Unique to text editions:
 /** A neume token.*/
 case object LexicalToken extends MidTokenCategory {
