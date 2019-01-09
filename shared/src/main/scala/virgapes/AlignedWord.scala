@@ -1,4 +1,6 @@
 package edu.holycross.shot.virgapes
+import scala.scalajs.js.annotation._
+
 
 /** Association of a syllabified text with a
 * corresponding series of neumes expressed as Strings.
@@ -8,7 +10,7 @@ package edu.holycross.shot.virgapes
 * @param neume Neume.
 *
 */
-case class AlignedWord(syllables : Vector[PairedSyllable]) {
+@JSExportTopLevel("AlignedWord") case class AlignedWord(syllables : Vector[PairedSyllable]) {
 
   def word : String = {
     syllables.map(_.textString).mkString("")

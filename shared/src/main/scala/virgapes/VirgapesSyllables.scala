@@ -1,6 +1,8 @@
 package edu.holycross.shot.virgapes
 import edu.holycross.shot.cite._
 import edu.holycross.shot.mid.validator._
+import scala.scalajs.js.annotation._
+
 
 /** An orthographic system for neumes encoded in the
 * Virgapes encoding, registered to a specific text or set
@@ -9,7 +11,7 @@ import edu.holycross.shot.mid.validator._
 * @param domain A set of one or more texts (depending
 * on the hierarchical level of domain) identified by a CtsUrn.
 */
-case class VirgapesSyllables(domain: CtsUrn) extends MidOrthography {
+@JSExportTopLevel("VirgapesSyllables")  case class VirgapesSyllables() extends MidOrthography {
 
   /** Name of orthographic system implementing MidOrthogaphy.*/
   def orthography = "Virgapes syllabic reading"

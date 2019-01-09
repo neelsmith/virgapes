@@ -10,18 +10,12 @@ class VirgapesSpec extends FlatSpec {
 
 
   val neumesDoc = CtsUrn("urn:cts:chant:massordinary.sg359.neumes:")
-  val ortho = Virgapes(neumesDoc)
+  val ortho = Virgapes()
 
   "A Virgapes orthography" should "have a label" in {
     assert(ortho.orthography == "Virgapes")
   }
 
-  it should "recognize its domain" in {
-    assert(ortho.inDomain(CtsUrn("urn:cts:chant:massordinary.sg359.neumes:")))
-
-    assert(ortho.inDomain(CtsUrn("urn:cts:chant:massordinary.sg359.text:")) == false)
-
-  }
 
 
   it should "accept digits, white space, periods and hyphens" in {
