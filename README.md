@@ -4,7 +4,8 @@
 ## What it is
 
 
-`virgapes` is a cross-platform library for working with chant encoded in the Virgapes alphabet.
+`virgapes` is a library for working with chant encoded in the Virgapes alphabet.  It currently builds on the JVM.  The build system is organized for cross building to Javascript as well:  I am currently working to expose parts of the library on that platform in addition to the JVM.
+
 
 ## About the Virgapes alphabet
 
@@ -27,7 +28,7 @@ See https://neelsmith.github.io/virgapes/.
 
 ## Using, building, testing
 
-`virgapes` can be built for both the JVM and ScalaJS using any version of Scala 2.11 or higher. Binaries for both the JVM and ScalaJS are available from jcenter built with Scala 2.11.8 and 2.12.3. To use the binaries in an sbt project, include Resolver.jcenterRepoin your list of resolvers
+`virgapes` can be built using any version of Scala 2.11 or higher. Binaries are available from jcenter built with Scala 2.11.8 and 2.12.3. To use the binaries in an sbt project, include Resolver.jcenterRepoin your list of resolvers
 
     resolvers += Resolver.jcenter
 
