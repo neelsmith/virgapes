@@ -1,5 +1,7 @@
 # `virgapes`: release notes
 
+**4.0.0**:  API-breaking changes implementing version 2.0 of `MidOrthography` trait.
+
 
 **3.7.0**:  Add new `VirgapesSyllables` class.
 
