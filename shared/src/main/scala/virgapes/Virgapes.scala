@@ -9,7 +9,7 @@ import edu.holycross.shot.mid.validator._
 * @param domain A set of one or more texts (depending
 * on the hierarchical level of domain) identified by a CtsUrn.
 */
-case class Virgapes(domain: CtsUrn) extends MidOrthography {
+case class Virgapes() extends MidOrthography {
 
   /** Name of orthographic system implementing MidOrthogaphy.*/
   def orthography = "Virgapes"
