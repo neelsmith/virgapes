@@ -7,7 +7,8 @@ title:  Quick start
 Import the library:
 
 
-```tut
+```scala
+scala> import edu.holycross.shot.virgapes._
 import edu.holycross.shot.virgapes._
 ```
 
