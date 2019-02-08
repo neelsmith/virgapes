@@ -1,5 +1,9 @@
 # `virgapes`: release notes
 
+
+**5.0.0**:  API-breaking changes converting `Virgapes` to an object rather than a case class.
+
+
 **4.0.0**:  API-breaking changes implementing version 2.0 of `MidOrthography` trait.
 
 

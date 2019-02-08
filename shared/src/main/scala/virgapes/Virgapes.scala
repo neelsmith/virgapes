@@ -5,11 +5,8 @@ import edu.holycross.shot.mid.validator._
 /** An orthographic system for neumes encoded in the
 * Virgapes encoding, registered to a specific text or set
 * of texts identified by CtsUrn.
-*
-* @param domain A set of one or more texts (depending
-* on the hierarchical level of domain) identified by a CtsUrn.
 */
-case class Virgapes() extends MidOrthography {
+object Virgapes extends MidOrthography {
 
   /** Name of orthographic system implementing MidOrthogaphy.*/
   def orthography = "Virgapes"

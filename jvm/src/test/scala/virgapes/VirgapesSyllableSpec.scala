@@ -10,11 +10,11 @@ class VirgapesSyllableSpec extends FlatSpec {
 
 
 
-  val ortho = VirgapesSyllables()
+  //val ortho = VirgapesSyllables()
 
-  "A VirgapesSyllables orthography" should "have a label" in {
+  "A VirgapesSyllables orthography" should "have a label" in pending /*{
     assert(ortho.orthography == "Virgapes syllabic reading")
-  }
+  }*/
 
 
 
