@@ -16,7 +16,7 @@ class VirgapesSpec extends FlatSpec {
     assert(Virgapes.orthography == "Virgapes")
   }
 
-
+/*
 
   it should "accept digits, white space, periods and hyphens" in {
     assert (Virgapes.validString("1"))
@@ -60,4 +60,5 @@ class VirgapesSpec extends FlatSpec {
     )
     assert (Virgapes.tokenizeString(twoNeumes) == expected)
   }
+  */
 }

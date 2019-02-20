@@ -1,11 +1,9 @@
 package edu.holycross.shot.virgapes
 import edu.holycross.shot.cite._
 import edu.holycross.shot.ohco2._
-import edu.holycross.shot.mid.latinmodel.{LexicalToken => Lex, _}
+//import edu.holycross.shot.mid.latinmodel.{LexicalToken => Lex, _}
 import edu.holycross.shot.latin._
 
-import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** Object for aligning texts and neumes from
 * different kinds of sources, and creating
@@ -23,6 +21,9 @@ object Aligner {
   *
   * @param c Corpus to syllabify.
   */
+
+
+  /*
   def syllabifyMidXml(c: Corpus, alphabet: LatinAlphabet  = edu.holycross.shot.latin.Latin23Alphabet
       ): Vector[Vector[String]] = {
     val tkns = LatinTeiReader.fromCorpus(c)
@@ -35,7 +36,7 @@ object Aligner {
     }
     syllables
   }
-
+*/
 
   /** Recursively process vector of words.
   */
@@ -74,6 +75,9 @@ object Aligner {
   * @param neumeSyllables Vector of Syllables of neumes to align with text.
   * @param corpus Text corpus to align with neumes.
   */
+
+
+  /*
   def alignXml(neumeSyllables: Vector[Syllable], corpus: Corpus): Vector[Vector[PairedSyllable]] = {
     val wordSyllables = syllabifyMidXml(corpus)//.map(_.mkString("-"))
     //alignTokens(textSyllables, neumeSyllables)
@@ -105,4 +109,5 @@ object Aligner {
     def syllabifiedNeumes = Syllabifier.fromXmlCorpus(neumes)
     alignTokens(syllabifiedWords, syllabifiedNeumes)
   }
+  U*/
 }

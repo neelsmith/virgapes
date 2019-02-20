@@ -8,7 +8,7 @@ import edu.holycross.shot.ohco2._
 */
 class SyllableSourceSpec extends FlatSpec {
 
-  "The Syllable object" should "parse a CitableNode into a vector of Syllables" in {
+  "The Syllable object" should "parse a CitableNode into a vector of Syllables" in pending /*{
     val catCex = "jvm/src/test/resources/ctscatalog.cex"
     val citeConf = "jvm/src/test/resources/citationconfig.cex"
     val baseDir = "jvm/src/test/resources"
@@ -42,5 +42,5 @@ class SyllableSourceSpec extends FlatSpec {
 
       val punct = sylls(0).neumes(0)
         assert(punct.neumeType.get == Punctum)
-    }
+    }*/
 }

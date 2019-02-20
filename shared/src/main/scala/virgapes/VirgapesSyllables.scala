@@ -1,6 +1,7 @@
 package edu.holycross.shot.virgapes
 import edu.holycross.shot.cite._
 import edu.holycross.shot.mid.validator._
+import edu.holycross.shot.ohco2._
 import scala.scalajs.js.annotation._
 
 
@@ -11,7 +12,7 @@ import scala.scalajs.js.annotation._
 * @param domain A set of one or more texts (depending
 * on the hierarchical level of domain) identified by a CtsUrn.
 */
-@JSExportTopLevel("VirgapesSyllables")  case class VirgapesSyllables() extends MidOrthography {
+@JSExportTopLevel("VirgapesSyllables")  object VirgapesSyllables extends MidOrthography {
 
   /** Name of orthographic system implementing MidOrthogaphy.*/
   def orthography = "Virgapes syllabic reading"
@@ -53,19 +54,17 @@ import scala.scalajs.js.annotation._
     Vector(NeumeSyllableToken)
   }
 
-  /** Tokenize a String.
-  *
-  * @param s String to tokenize.
-  */
-  def tokenizeString(s: String): Vector[MidToken] = {
-    val tokens = s.split("\\s+").filter(_.nonEmpty)
-    val pairs = for (t <- tokens) yield {
-      if (validString(t)) {
-        MidToken(t,Some(NeumeSyllableToken))
-      } else {
-        MidToken(t,None)
-      }
+  def tokenizeNode(n: CitableNode): Vector[MidToken] = {
+
+    val syllables = n.text.split("\\s+").filter(_.nonEmpty)
+    val tokenized = for (syllable <- syllables.zipWithIndex) yield {
+      val newPassage = n.urn.passageComponent + "." + syllable._2
+      val newVersion = n.urn.addVersion(n.urn.versionOption.getOrElse("") + "_sylls")
+      val newUrn = CtsUrn(newVersion.dropPassage.toString + newPassage)
+      val trimmed = syllable._1.trim
+      MidToken(newUrn, trimmed, Some(NeumeSyllableToken))
     }
-    pairs.toVector
+    tokenized.toVector
   }
+
 }

@@ -1,5 +1,6 @@
 package edu.holycross.shot.virgapes
 import edu.holycross.shot.cite._
+import edu.holycross.shot.ohco2._
 import edu.holycross.shot.mid.validator._
 
 /** An orthographic system for neumes encoded in the
@@ -52,23 +53,31 @@ object Virgapes extends MidOrthography {
   *
   * @param s String to tokenize.
   */
-  def tokenizeString(s: String): Vector[MidToken] = {
 
-    val expandHyphens = s.replaceAll("-", " - ")
+
+  def tokenizeNode(n: CitableNode): Vector[MidToken] = {
+    val urn = n.urn
+    val expandHyphens = n.text.replaceAll("-", " - ")
     val tokens = expandHyphens.split("\\s+").filter(_.nonEmpty)
-    val pairs = for (t <- tokens) yield {
-      if (t == "-") {
-        MidToken(t,Some(PunctuationToken))
-      } else if (validString(t)) {
-        val parts = t.split("\\.")
+    val pairs = for (tkn <- tokens.zipWithIndex) yield {
+      val newPassage = urn.passageComponent + "." + tkn._2
+      val newVersion = urn.addVersion(urn.versionOption.getOrElse("") + "_tkns")
+      val newUrn = CtsUrn(newVersion.dropPassage.toString + newPassage)
+
+      val txt = tkn._1.trim
+      if (txt == "-") {
+        MidToken(newUrn,txt,Some(PunctuationToken))
+
+      } else if (validString(txt)) {
+        val parts = txt.split("\\.")
         if (parts.size == 4) {
-          MidToken(t,Some(NeumeToken))
+          MidToken(newUrn,txt,Some(NeumeToken))
         } else {
-          MidToken(t,None)
+          MidToken(newUrn, txt,None)
         }
 
       } else {
-        MidToken(t,None)
+        MidToken(newUrn,txt,None)
       }
     }
     pairs.toVector

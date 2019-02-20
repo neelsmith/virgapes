@@ -1,5 +1,7 @@
 # `virgapes`: release notes
 
+**6.0.0**:  API-breaking changes adding `VirgapesSyllable` and making classes cross compile properly for ScalaJS.
+
 
 **5.0.0**:  API-breaking changes converting `Virgapes` to an object rather than a case class.
 
