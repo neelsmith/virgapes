@@ -16,11 +16,14 @@ import scala.scalajs.js.annotation._
   require(validNeume)
 
 
-  /** Serialize to Virgapes format. */
+  /** Serialize to Virgapes encoding. */
   override def toString: String = {
     s"${pitches}.${neume}.${episema}.${liquescence}"
   }
 
+
+  /** Determine type of neume from its pitch count and neume ID, or
+  * None if invalid combination of ID and pitch count. */
   def neumeType: Option[NeumeType] = {
     Neume.neumeType(pitches, neume)
   }
@@ -32,6 +35,29 @@ import scala.scalajs.js.annotation._
       case None => s"Could not find type for ID ${neume} with ${pitches} pitch(es)."
       case nt: Some[NeumeType] => nt.get.name
     }
+  }
+
+
+  /** Compose markdown string for link to glyph for this neume.
+  * Assumed that neume glyphs are .png files with name matching
+  * String encoding of the neueme.
+  *
+  * @param urlBase
+  */
+  def mdGlyph(urlBase: String = Neume.defaultGlyphBase): String = {
+    "![" + this.toString + "](" + urlBase +  this.toString + ".png)"
+  }
+
+
+  /** Compose HTML string for link to glyph for this neume.
+  * Assumed that neume glyphs are .png files with name matching
+  * String encoding of the neueme.
+  *
+  * @param width Width for displayed image.
+  * @param urlBase
+  */
+  def htmlGlyph(width: Int = 20, urlBase: String = Neume.defaultGlyphBase): String = {
+     "<img src=\"" +  urlBase +  this.toString + ".png\" width=\"" + width + "\"/>"
   }
 
   /**  Validate values for member elements.
@@ -70,6 +96,7 @@ import scala.scalajs.js.annotation._
 */
 object Neume {
 
+  val defaultGlyphBase = "https://raw.githubusercontent.com/HCMID/chant/master/validation/neumes/"
 
   /** Build a [[Neume]] from a dot-delimited string.
   *

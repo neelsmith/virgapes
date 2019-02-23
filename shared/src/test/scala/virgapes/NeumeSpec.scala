@@ -60,4 +60,16 @@ class NeumeSpec extends FlatSpec {
     val expected = "1.1.0.0"
     assert(neume.toString == expected)
   }
+
+  it should "format a markdown link to a glyph" in {
+    val neume = Neume(1,1,0,0)
+    val expectedMd = "![1.1.0.0](https://raw.githubusercontent.com/HCMID/chant/master/validation/neumes/1.1.0.0.png)"
+    assert(neume.mdGlyph() == expectedMd)
+  }
+
+  it should "format an HTML link to a glyph" in {
+    val neume = Neume(1,1,0,0)
+    val expectedHtml= "<img src=\"https://raw.githubusercontent.com/HCMID/chant/master/validation/neumes/1.1.0.0.png\" width=\"20\"/>"
+    assert(neume.htmlGlyph() == expectedHtml)
+  }
 }

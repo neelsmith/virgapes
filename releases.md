@@ -1,5 +1,8 @@
 # `virgapes`: release notes
 
+**6.1.0**: Add functions for formatting markdown and HTML links to glyphs for Neumes.
+
+
 **6.0.0**:  API-breaking changes adding `VirgapesSyllable` and making classes cross compile properly for ScalaJS.
 
 
